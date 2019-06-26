@@ -1,0 +1,19 @@
+.navColor{
+    background-color: #a5dd3f;
+    font-size: 18px;
+    font-weight: 600;
+}
+.navColor:hover{
+    background-color: #a6dd3fe1;
+}
+.c1{
+    color: #ffffff;
+}
+.c1 :hover{
+    
+    color: #1f1f1f;
+}
+#icon {
+    width: 40px;
+    height: 40px;
+}

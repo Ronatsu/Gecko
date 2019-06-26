@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
+import './GeneralCSS/NavCss.css';
 import Nav from './Components/Header';
 import Carrusel from './Components/Carrusel';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
       <Carrusel></Carrusel>
       </body>
       <footer id="footer">
-        fggg
+        <Footer></Footer>
       </footer>
     </div>
   );
