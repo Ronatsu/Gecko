@@ -1,0 +1,25 @@
+.navColor{
+    background-color: #a5dd3f;
+    font-size: 20px;
+    font-weight: 600;
+}
+.navColor:hover{
+    background-color: #a6dd3fe1;
+}
+.colorText{
+    color: #ffffff;
+}
+.colorText :hover{  
+    color: #353531;
+}
+.colorCart{
+    color: #353531af;
+}
+.colorCart :hover{  
+    
+    color: #353531;
+}
+#icon {
+    width: 40px;
+    height: 40px;
+}
