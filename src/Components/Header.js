@@ -8,32 +8,32 @@ class Header extends Component {
 
     render() {
         return (
-            /*<Navbar className="navColor" expand="lg">
-                <Navbar.Brand className="ml-3" href="#home"><img src={require("../Imagenes/logos/gecko3.png")} width="170" height="50" /></Navbar.Brand>
+            <div>
+            <Navbar className="navColor" expand="lg">
+                <Navbar.Brand className="ml-4" href="#home"><img src={require("../Imagenes/logos/gecko3.png")} width="170" height="50" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto">
-                        <Nav.Item className="c1"href="#Inicio">Inicio</Nav.Item>
-                        <Nav.Link href="#Tours">Tours</Nav.Link>
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#Servicios">Servicios</Nav.Link>
-                        <Nav.Link href="#Consejos">Consejos</Nav.Link>
-                        <Nav.Link href="#Acerca">Acerca de</Nav.Link>
-                        <Nav.Link href="#Contacto">Contacto</Nav.Link>
+                    <Nav className="ml-auto mt-2 colorText">
+                        <Nav.Item className="mr-4" href="#Inicio">Inicio</Nav.Item>
+                        <Nav.Item className="mr-4" href="#Tours">Tours</Nav.Item>
+                        <Nav.Item className="mr-4" href="#Servicios">Servicios</Nav.Item>
+                        <Nav.Item className="mr-4" href="#Consejos">Consejos</Nav.Item>
+                        <Nav.Item className="mr-4" href="#Acerca">Acerca de</Nav.Item>
+                        <Nav.Item className="mr-4" href="#Contacto">Contacto</Nav.Item>
                     </Nav>
-                    <Nav className="ml-3 mr-3">
+                    <Nav className="ml-3 mr-3 colorCart">
                         
-                    <Nav.Link><ShoppingCart id="icon"/></Nav.Link>
+                    <Nav.Item><ShoppingCart id="icon"/></Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar>*/
+            </Navbar>
               <nav className="navbar navbar-expand-lg navbar-light navColor">
                   <a className="navbar-brand ml-4" href="#"> <img src={require("../Imagenes/logos/gecko3.png")} width="170" height="50" /></a>
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span className="navbar-toggler-icon"></span>
                   </button>
                   <div className="collapse navbar-collapse" id="navbarNav">
-                      <ul className="navbar-nav ml-auto c1 mt-2">
+                      <ul className="navbar-nav ml-auto colorText mt-2">
                           <li className="nav-item mr-4">
                               <p className="" href="#">Inicio</p>
                           </li>
@@ -53,13 +53,14 @@ class Header extends Component {
                               <p className="" href="#">Contacto</p>
                           </li>
                       </ul>
-                      <ul className="navbar-nav ml-3 mr-3">
-                          <li className="nav-link">
+                      <ul className="navbar-nav ml-3 mr-3 colorCart">
+                          <li className="">
                              <ShoppingCart id="icon"/> 
                           </li>
                       </ul>
                   </div>
               </nav>
+              </div>
         );
     }
 }
