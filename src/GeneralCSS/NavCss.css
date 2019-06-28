@@ -1,17 +1,23 @@
 .navColor{
     background-color: #a5dd3f;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
 }
 .navColor:hover{
     background-color: #a6dd3fe1;
 }
-.c1{
+.colorText{
     color: #ffffff;
 }
-.c1 :hover{
+.colorText :hover{  
+    color: #353531;
+}
+.colorCart{
+    color: #353531af;
+}
+.colorCart :hover{  
     
-    color: #1f1f1f;
+    color: #353531;
 }
 #icon {
     width: 40px;
