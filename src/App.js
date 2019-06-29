@@ -5,7 +5,7 @@ import Nav from './Components/Header';
 import Carrusel from './Components/Carrusel';
 import Footer from './Components/Footer';
 
-import Blog from './Blog/entradaBlog';
+import Home from './Home';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Nav/>
       </header>
       <body id="body">
-      <Blog/>
+      <Home/>
       </body>
 
     </div>

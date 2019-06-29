@@ -3,27 +3,24 @@ import Carrusel from './Components/Carrusel';
 import React, { Component } from 'react';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
+  render() {
+    return (
 
-          <div>
-          <header id="header">
-            <Nav></Nav>
-          </header>
-          <body id="body">
-            <Carrusel></Carrusel>
-          </body>
-          <footer id="footer">
-            fggg
+      <div>
+        <body id="body">
+          <Carrusel></Carrusel>
+        </body>
+        <footer id="footer">
+          fggg
           </footer>
-          </div>
+      </div>
 
-        );
-    }
+    );
+  }
 }
 
 export default Home;
