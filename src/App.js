@@ -1,25 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import './GeneralCSS/NavCss.css';
-import Nav from './Components/Header';
-import Carrusel from './Components/Carrusel';
-import Footer from './Components/Footer';
+import { BrowserRouter as Router, Route,Switch, Redirect } from 'react-router-dom';
+import Home from './Home';
 
-function App() {
-  return (
-    <div className="App">
-      <header id="header">
-        <Nav></Nav>
-      </header>
-      <body id="body">
-      <Carrusel></Carrusel>
-      </body>
-      <footer id="footer">
-        <Footer></Footer>
-      </footer>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Switch>
+          <div>
+              <Route exact path="/" component={Home} />
+          </div>
+      </Switch>
+    );
+  }   
+
 }
-
 export default App;
-

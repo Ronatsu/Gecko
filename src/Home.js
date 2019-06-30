@@ -1,27 +1,40 @@
+import React, { Component } from "react";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Nav from './Components/Header';
 import Carrusel from './Components/Carrusel';
-import React, { Component } from 'react';
+import AccordionComponent from './Components/Accordion';
+import VideoComponent from './Components/VideoComponent';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        }
 
     render() {
         return (
-
           <div>
-          <header id="header">
-            <Nav></Nav>
-          </header>
-          <body id="body">
-            <Carrusel></Carrusel>
-          </body>
-          <footer id="footer">
-            fggg
-          </footer>
-          </div>
+            <Nav/>
+            <Container>
+              <Row>
 
+                <div className="col-xs-12 col-sm-12 col-lg-12">
+                  <Carrusel/>
+                  <br>
+                  </br>
+                </div>
+
+                <Col md={{ span: 6, offset: 3 }}>
+
+                  <VideoComponent/>
+                  <br>
+                  </br>
+                </Col>
+
+                <div className="col-xs-4 col-sm-4 col-lg-4">
+                  <AccordionComponent/>
+                </div>
+              </Row>
+            </Container>
+          </div>
         );
     }
 }
