@@ -3,6 +3,7 @@ import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from 'react-boots
 import { ShoppingCart } from '@material-ui/icons';
 import '../GeneralCSS/NavCss.css';
 import { Icon } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
 
@@ -17,7 +18,7 @@ class Header extends Component {
                         <Nav.Item className="mr-4" href="#Inicio">Inicio</Nav.Item>
                         <Nav.Item className="mr-4" href="#Tours">Tours</Nav.Item>
                         <Nav.Item className="mr-4" href="#Servicios">Servicios</Nav.Item>
-                        <Nav.Item className="mr-4" href="#Consejos">Consejos</Nav.Item>
+                        <Link to="/consejos/consejo1">  <Nav.Item className="mr-4" href="#Consejos">Consejos</Nav.Item></Link>
                         <Nav.Item className="mr-4" href="#Acerca">Acerca de</Nav.Item>
                         <Nav.Item className="mr-4" href="#Contacto">Contacto</Nav.Item>
                     </Nav>
@@ -44,7 +45,7 @@ class Header extends Component {
                               <p className="" href="#">Servicios</p>
                           </li>
                           <li className="nav-item mr-4">
-                              <p className="" href="#">Consejos</p>
+                          <Link to="/consejos/consejo1"><p className="" href="#">Consejos</p></Link>
                           </li>
                           <li className="nav-item mr-4">
                               <p className="" href="#">Acerda de</p>
