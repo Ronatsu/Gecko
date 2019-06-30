@@ -13,7 +13,7 @@ class Rutas extends Component {
             <Switch>
                 <div>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/consejos/consejo1" component={entradaBlog} />
+
                 </div>
             </Switch>
         );

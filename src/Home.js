@@ -8,7 +8,6 @@ import AccordionComponent from './Components/Accordion';
 import VideoComponent from './Components/VideoComponent';
 
 class Home extends Component {
-<<<<<<< HEAD
 
     render() {
         return (
@@ -38,26 +37,6 @@ class Home extends Component {
           </div>
         );
     }
-=======
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-
-      <div>
-        <body id="body">
-          <Carrusel></Carrusel>
-        </body>
-        <footer id="footer">
-          fggg
-          </footer>
-      </div>
-
-    );
-  }
->>>>>>> e27cd99e160d0edb4e827b38e5fbf4b10fa06434
 }
 
 export default Home;
