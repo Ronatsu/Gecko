@@ -54,9 +54,9 @@ class CardsComponent extends Component {
 
             <CardDeck>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src={require("../Imagenes/1200px-Poas_crater.jpg")} />
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>Volcan Poas</Card.Title>
                         <Card.Text>
                             This is a wider card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.
@@ -67,7 +67,7 @@ class CardsComponent extends Component {
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src={require("../Imagenes/257996_piedra.jpg")} />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
@@ -79,7 +79,7 @@ class CardsComponent extends Component {
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src={require("../Imagenes/article.jpg")} />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>

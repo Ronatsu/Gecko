@@ -1,17 +1,15 @@
-import "node_modules/video-react/dist/video-react.css"; // import css
+
 import { Player } from 'video-react';
 import React, { Component } from "react";
-
+import "../../node_modules/video-react/dist/video-react.css"; // import css
 
 
 class VideoReact extends Component {
     render() {
         return (
-            <Player
-                playsInline
-                poster=""
-                src="https://youtu.be/gokQtVCxslw"
-            />
+            <Player>
+                <source src="https://youtu.be/gokQtVCxslw" />
+            </Player>
         );
     }
 

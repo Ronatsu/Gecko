@@ -6,12 +6,13 @@ import Carrusel from './Components/Carrusel';
 import VideoComponent from './Components/VideoComponent';
 import VideoReact from './Components/VideoReact';
 import CardsComponent from './Components/CardsComponent';
+import './GeneralCSS/Home.css';
 
 class Home extends Component {
 
     render() {
         return (
-          <div>
+          <div className="all">
             <Container>
               <Row>
 
@@ -21,7 +22,7 @@ class Home extends Component {
                   </br>
                 </div>
 
-                <Col md={{ span: 6, offset: 3 }}>
+                <Col md="12" lg="12">
 
                   <VideoReact/>
                   <br>
