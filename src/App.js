@@ -4,6 +4,7 @@ import './GeneralCSS/NavCss.css';
 import Nav from './Components/Header';
 import Carrusel from './Components/Carrusel';
 import Footer from './Components/Footer';
+import Tour from './TourPages/Tours';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Nav></Nav>
       </header>
       <body id="body">
-      <Carrusel></Carrusel>
+      <Tour></Tour>
       </body>
       <footer id="footer">
         <Footer></Footer>
