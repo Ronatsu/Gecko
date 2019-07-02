@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
+import "node_modules/video-react/dist/video-react.css"; // import css
+import { Player } from 'video-react';
 
 class VideoComponent extends Component {
 
@@ -7,7 +9,7 @@ class VideoComponent extends Component {
     return (
       <div>
         <ReactPlayer
-          url='https://www.youtube.com/watch?v=nYmMXKUlgn0&t=133s'
+          url='https://youtu.be/gokQtVCxslw'
           className='react-player'
           playing
         />

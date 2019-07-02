@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Nav from './Components/Header';
 import Carrusel from './Components/Carrusel';
-import AccordionComponent from './Components/Accordion';
 import VideoComponent from './Components/VideoComponent';
+import VideoReact from './Components/VideoReact';
+import CardsComponent from './Components/CardsComponent';
 
 class Home extends Component {
 
@@ -23,13 +23,13 @@ class Home extends Component {
 
                 <Col md={{ span: 6, offset: 3 }}>
 
-                  <VideoComponent/>
+                  <VideoReact/>
                   <br>
                   </br>
                 </Col>
 
-                <div className="col-xs-4 col-sm-4 col-lg-4">
-                  <AccordionComponent/>
+                <div className="col-xs-6 col-sm-6 col-lg-12">
+                <CardsComponent/>
                 </div>
               </Row>
             </Container>
