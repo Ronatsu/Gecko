@@ -6,6 +6,9 @@
 .navColor:hover{
     background-color: #a6dd3fe1;
 }
+a{
+    color: #ffffff;
+}
 .colorText{
     color: #ffffff;
 }
@@ -16,7 +19,6 @@
     color: #353531af;
 }
 .colorCart :hover{  
-    
     color: #353531;
 }
 #icon {

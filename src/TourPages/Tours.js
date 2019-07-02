@@ -5,7 +5,8 @@ import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { CustomInput, FormGroup, Label, Col, Row } from 'reactstrap';
 import '../GeneralCSS/TourCss.css';
 import $ from 'jquery';
-import { height } from "@material-ui/system";
+import { Accordion, Card, Button } from "react-bootstrap";
+
 
 class Tour extends Component {
     constructor() {
@@ -99,50 +100,24 @@ class Tour extends Component {
             <div className="container-fluid all">
                 <div className="row">
                     <div className="sidebar col-sm-3 h-100">
-                        <a className="container-fluid" id="4" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false">
-                            <Label id="5">Checkboxes</Label>
-                            <FormGroup>
-                                <div className="collapse" id="collapseTwo" >
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
+                        <div id="accordion">
+
+                            <div class="card header">
+                                <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                        Collapsible Group Item #1
+                                    </a>
                                 </div>
-                            </FormGroup>
-                        </a>
-                        <a data-toggle="collapse" data-target="#collapseTwo2">
-                            <Label>Checkboxes</Label>
-                            <FormGroup>
-                                <div className="collapse" id="collapseTwo2">
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
+                                        <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
+                                        <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
+                                        <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
+                                    </div>
                                 </div>
-                            </FormGroup>
-                        </a>
-                        <a data-toggle="collapse" data-target="#collapseTwo3">
-                            <Label>Checkboxes</Label>
-                            <FormGroup>
-                                <div className="collapse" id="collapseTwo3">
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
-                                </div>
-                            </FormGroup>
-                        </a>
-                        <a data-toggle="collapse" data-target="#collapseTwo4">
-                            <Label>Checkboxes</Label>
-                            <FormGroup>
-                                <div className="collapse" id="collapseTwo4">
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
-                                </div>
-                            </FormGroup>
-                        </a>
+                            </div>
+                        </div>
                     </div>
                     <div className="col-sm-9 ml-auto content">
                         <Row>
@@ -169,3 +144,16 @@ function expandIcon() {
         return <ExpandLess/>
     }*/
 }
+/*
+ <a data-toggle="collapse" data-target="#collapseTwo4">
+                            <Label>Checkboxes</Label>
+                            <FormGroup>
+                                <div className="collapse" id="collapseTwo4">
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
+                                </div>
+                            </FormGroup>
+                        </a>
+*/

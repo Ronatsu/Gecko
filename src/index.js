@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import AppRoutes from './Rutas/Routes';
 import * as serviceWorker from './serviceWorker';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 render(
-        <Router>
-            <App/>
-        </Router>,
+    <Router>
+        <AppRoutes />
+    </Router>,
     document.getElementById('root')
 );
 
