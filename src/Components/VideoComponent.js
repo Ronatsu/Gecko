@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
+import Card from 'react-bootstrap/Card';
 
 class VideoComponent extends Component {
 
   render() {
     return (
-      <div>
-        <ReactPlayer
-          url='https://www.youtube.com/watch?v=nYmMXKUlgn0&t=133s'
-          className='react-player'
-          playing
-        />
-      </div>
+      <ReactPlayer
+        url='https://youtu.be/gokQtVCxslw'
+        className='react-player'
+        playing
+      />
+
     );
   }
 }
