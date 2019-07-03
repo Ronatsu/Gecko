@@ -9,88 +9,34 @@ class CardsComponent extends Component {
 
     render() {
         return (
-            /*<CardGroup>
-                <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
-                </Card>
-                <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This card has supporting text below as a natural lead-in to additional content.{' '}
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
-                </Card>
-                <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to
-                            show that equal height action.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
-                </Card>
-            </CardGroup>*/
-
-
             <CardDeck>
                 <Card>
                     <Card.Img variant="top" src={require("../Imagenes/1200px-Poas_crater.jpg")} />
                     <Card.Body>
                         <Card.Title>Volcan Poas</Card.Title>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
+                            Volcan localizado en la zona de Alajuela, el cual cuenta con senderos, increibles vistas, zonas de picnic 
+                            y multiples actividades.
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
                 </Card>
                 <Card>
                     <Card.Img variant="top" src={require("../Imagenes/257996_piedra.jpg")} />
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>Puente de piedra</Card.Title>
                         <Card.Text>
-                            This card has supporting text below as a natural lead-in to additional content.{' '}
+                            Puente de piedra que alberga múltiples relatos y leyendas.
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
                 </Card>
                 <Card>
                     <Card.Img variant="top" src={require("../Imagenes/article.jpg")} />
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>Ojo de agua</Card.Title>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to
-                            show that equal height action.
+                            Centro turistico acuatico en Alajuela, Costa Rica.
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
                 </Card>
             </CardDeck>
         );

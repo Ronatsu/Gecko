@@ -5,6 +5,7 @@ import App from '../App';
 import Nav from '../Components/Header';
 import Footer from '../Components/Footer';
 import Tour from '../TourPages/Tours';
+import AboutUs from '../AboutUs/AboutUs';
 
 class AppRoutes extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class AppRoutes extends Component {
                     <Route exact path="/Tour" component={Tour} />
                     <Route exact path="/Header" component={Nav} />
                     <Route exact path="/Footer" component={Footer} />
+                    <Route exact path="/AboutUs" component={AboutUs} />
                 </Switch>
             </App>
         );
