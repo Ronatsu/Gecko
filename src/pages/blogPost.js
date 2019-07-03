@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import '../GeneralCSS/blog.css';
 import { Link } from "react-router-dom";
 
-class AjustesPerfil extends Component {
+class BlogPost extends Component {
 
     render() {
         return (
@@ -85,4 +84,4 @@ class AjustesPerfil extends Component {
     }
 }
 
-export default AjustesPerfil;
+export default BlogPost;

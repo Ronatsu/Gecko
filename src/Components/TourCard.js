@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
-import '../GeneralCSS/Card.css';
+import './Card.css';
 
 
 class TourCard extends Component {

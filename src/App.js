@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
-import './GeneralCSS/NavCss.css';
-import Nav from './Components/Header';
-import Carrusel from './Components/Carrusel';
-import Footer from './Components/Footer';
+//import './GeneralCSS/NavCss.css';
+import Nav from './components/Header';
+import Carrusel from './components/Carrusel';
+//import Footer from './components/Footer';
 
 class App extends Component {
   static propTypes = {
@@ -21,7 +21,7 @@ class App extends Component {
           {children}
         </body>
         <footer id="footer">
-          <Footer></Footer>
+         
         </footer>
       </div>
     );
@@ -31,7 +31,6 @@ class App extends Component {
 /*import { BrowserRouter as Router, Route,Switch, Redirect } from 'react-router-dom';
 import Home from './Home';
 import EntradaBlog from './Blog/entradaBlog';
-
 class App extends Component {
   render() {
     return (
@@ -43,6 +42,5 @@ class App extends Component {
       </Switch>
     );
   }
-
 }*/
 export default App;

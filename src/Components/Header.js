@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { ShoppingCart } from '@material-ui/icons';
-import '../GeneralCSS/NavCss.css';
+import '../components/NavCss.css';
 import { Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
@@ -37,22 +37,25 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto colorText mt-2">
                         <li className="nav-item mr-4">
-                            <p className="" href="#">Inicio</p>
+                        <Link to="/"><p className="" href="#">Inicio</p></Link>
                         </li>
                         <li className="nav-item mr-4">
-                        <Link to="/Tour"><p className="" href="#">Tours</p></Link>
+                        <Link to="/tour"><p className="" href="#">Tours</p></Link>
                         </li>
                         <li className="nav-item mr-4">
                             <p className="" href="#">Servicios</p>
                         </li>
                         <li className="nav-item mr-4">
-                            <p className="" href="#">Consejos</p>
+                        <Link to="/blogPost"><p className="" href="#">Consejos</p></Link>
                         </li>
                         <li className="nav-item mr-4">
                             <p className="" href="#">Acerda de</p>
                         </li>
                         <li className="nav-item mr-4">
                             <p className="" href="#">Contacto</p>
+                        </li>
+                        <li className="nav-item mr-4">
+                        <Link to="/db"><p className="" href="#">testDB</p></Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav ml-3 mr-3 colorCart">

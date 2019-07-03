@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Carrusel from './Components/Carrusel';
-import VideoComponent from './Components/VideoComponent';
-import VideoReact from './Components/VideoReact';
-import CardsComponent from './Components/CardsComponent';
-import './GeneralCSS/Home.css';
+import Carrusel from '../components/Carrusel';
+import VideoComponent from '../components/VideoComponent';
+import VideoReact from '../components/VideoReact';
+import CardsComponent from '../components/CardsComponent';
+import './Home.css';
 
 class Home extends Component {
 
@@ -24,7 +24,7 @@ class Home extends Component {
 
                 <Col md="12" lg="12">
 
-                  <VideoReact/>
+                  <VideoComponent/>
                   <br>
                   </br>
                 </Col>

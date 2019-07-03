@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import TourCard from './TourCard';
+import TourCard from '../components/TourCard';
 import { Container } from "@material-ui/core";
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { CustomInput, FormGroup, Label, Col, Row } from 'reactstrap';
-import '../GeneralCSS/TourCss.css';
+import './Tours.css';
 import $ from 'jquery';
 import { Accordion, Card, Button } from "react-bootstrap";
 
