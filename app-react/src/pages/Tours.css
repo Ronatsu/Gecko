@@ -1,68 +1,33 @@
 .all{
   background-color: #353531;
 }
-.sidebar {
-    background-color: #353531;
-    color: #ffffff;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-  }
-.sidebar a {
+.sidebar{
+  margin: 0;
+  padding: 0;
+}
+.filterText{
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+.card{
+  background-color: #353531;
+  color: #ffffff;
+}
+.card :hover{
+  background-color: #a5dd3f;
+  color: #353531;
+}
+.card-header{
+  text-align: center;
     display: block;
-    color: #ffffff;
-    padding: 16px;
+    padding: 25px;
     text-decoration: none;
-  }
-  .header{
-    background-color: #353531;
-    color: #ffffff;
-  }
-  .header :hover{
-    background-color: #a5dd3f;
-    color: #353531;
-  }
-  .pa{
-    background-color: #353531;
-    color: #ffffff;
-    padding: 16px;
-    text-decoration: none;
-  }
-  .pa div{
-    background-color: #353531;
-  }
-
-  .sidebar a:hover {
-    background-color: #a5dd3f;
-    color: #353531;
-  }
+}
+.card-body{
+  background-color: #a5dd3f;
+  color: #353531;
+}
   div.content {
     background-color: #ffffff;
   }
-
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a:hover {
-        background-color: #a5dd3f;
-        color: #353531;
-      }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  }
-
-  @media screen and (max-width:400px) {
-
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-    .sidebar a:hover {
-        background-color: #a5dd3f;
-        color: #353531;
-      }
-  } 

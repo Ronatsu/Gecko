@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import TourCard from '../components/TourCard';
-import { Container } from "@material-ui/core";
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { CustomInput, FormGroup, Label, Col, Row } from 'reactstrap';
-import './Tours.css';
+import '../pages/Tours.css';
 import $ from 'jquery';
-import { Accordion, Card, Button } from "react-bootstrap";
+import { Accordion, Card, Button, Container } from "react-bootstrap";
 
 
 class Tour extends Component {
@@ -91,7 +90,7 @@ class Tour extends Component {
     render() {
         let tourCards = this.state.tour.map(tour => {
             return (
-                <Col sm="3">
+                <Col sm="4">
                     <TourCard tour={tour} />
                 </Col>
             );
@@ -99,22 +98,33 @@ class Tour extends Component {
         return (
             <div className="container-fluid all">
                 <div className="row">
-                    <div className="sidebar col-sm-3 h-100">
-                        <div id="accordion">
-
-                            <div class="card header">
-                                <div class="card-header">
-                                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                        Collapsible Group Item #1
-                                    </a>
+                    <div id="accordion" className="sidebar col-sm-3">
+                        <div className="filterText">
+                            <strong>Filtros</strong>
+                        </div>
+                        <div className="card">
+                            <div className="card-header" data-toggle="collapse" href="#collapseOne">
+                                Collapsible Group Item #1
                                 </div>
-                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
-                                        <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
-                                        <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
-                                        <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
-                                    </div>
+                            <div id="collapseOne" className="collapse show">
+                                <div class="card-body">
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="card">
+                            <div className="card-header" data-toggle="collapse" href="#collapseOne2">
+                                Collapsible Group Item #1
+                                </div>
+                            <div id="collapseOne2" className="collapse show">
+                                <div class="card-body">
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
+                                    <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
                                 </div>
                             </div>
                         </div>
