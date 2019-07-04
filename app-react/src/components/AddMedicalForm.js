@@ -41,13 +41,13 @@ class AddMedicalForm extends Component {
 
 
 
-   handleSubmitGEt = event => {
+    handleSubmitGEt = event => {
         event.preventDefault();
         axios.get(`http://localhost:9000/MedicalInfo/getTours`)
             .then(res => {
                 const tours = res.data;
                 //this.setState({ tours });
-                this.state.tours=tours;
+                this.state.tours = tours;
                 console.log(this.state.tours);
             })
     }
@@ -58,13 +58,12 @@ class AddMedicalForm extends Component {
         axios.post(`http://localhost:9000/MedicalInfo/addMedicalInfo`, {
             tourName: this.state.tourName,
             description: this.state.description,
-
         })
             .then(res => {
                 console.log(res);
                 console.log(res.data);
             })
-}
+    }
 
     render() {
         return (
@@ -74,6 +73,7 @@ class AddMedicalForm extends Component {
                         <h1 className="text-left colorBlue">Formulario médico</h1>
                         <div className="row">
                             <div className="col-4 offset-1 text-ceter">
+                                {this.state.tours}
                                 <label className="form-control">Tour: {this.state.tours}</label>
                             </div>
                         </div>
