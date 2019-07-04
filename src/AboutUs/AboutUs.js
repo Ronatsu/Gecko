@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure'
 import CardComponent from '../Components/Card';
+import { ShoppingCart } from '@material-ui/icons';
 
 class AboutUs extends Component {
     constructor(props) {
@@ -30,36 +31,48 @@ class AboutUs extends Component {
         }
     }
     render() {
+
+        let dataEnterprise =
+            <p>
+                <ShoppingCart /> <h4>+506 8888-8888</h4>
+                <ShoppingCart /> <h4>Gecko Aventuras S.A</h4>
+                <ShoppingCart /> <h4>Alajuela, Costa Rica</h4>
+            </p>
         return (
             <div className="DivAbout">
                 <Container className="CssAbout">
                     <Row className="CssAbout">
-                        <Col lg="4" className="CssAbout">
-                            <Figure>
-                                <Figure.Image
-                                    width={300}
-                                    height={300}
-                                    alt="300x300"
-                                    src={require("../Imagenes/logos/gecko2.png")}
-                                />
-                            </Figure>
-                        </Col>
-                        <Col lg="8" >
+
+                        <Col lg="12" >
                             <Row>
-                                <Col className="CssAbout">
-                                    <CardComponent
-                                        header={this.mision.name}
-                                        text={this.mision.Description}
-                                    />
+                                <Col lg="4" className="CssAbout">
+                                    <Figure>
+                                        <Figure.Image
+                                            width={300}
+                                            height={300}
+                                            alt="300x300"
+                                            src={require("../Imagenes/logos/gecko2.png")}
+                                        />
+                                    </Figure>
                                 </Col>
 
-                            </Row>
-                            <Row>
                                 <Col className="CssAbout">
-                                    <CardComponent
-                                        header={this.vision.name}
-                                        text={this.vision.Description}
-                                    />
+                                    <Row>
+                                        <Col className="CssAbout" lg="12">
+                                            <CardComponent
+                                                header={this.vision.name}
+                                                text={this.vision.Description}
+                                            />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col className="CssAbout" lg="12">
+                                            <CardComponent
+                                                header={this.mision.name}
+                                                text={this.mision.Description}
+                                            />
+                                        </Col>
+                                    </Row>
                                 </Col>
                             </Row>
                         </Col>
