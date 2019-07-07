@@ -5,7 +5,7 @@ import '../components/NavCss.css';
 import { Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Modal from "react-responsive-modal";
-import TableShopping from '../Components/TableShopping';
+import TableShopping from '../components/TableShopping';
 import carrito from '../Json/carrito.json';
 
 
