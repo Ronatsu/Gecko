@@ -1,0 +1,27 @@
+[
+    {
+        "Num": 1,
+        "NombreTour": "Chai",
+        "Descripcion": "Chai",
+        "Cantidad": 1,
+        "PrecioUnitario": 18000,
+        "PrecioUsuario": 18000
+    },
+    {
+        "Num": 2,
+        "NombreTour": "Sing",
+        "Descripcion": "Sing",
+        "Cantidad": 2,
+        "PrecioUnitario": 9000,
+        "PrecioUsuario": 18000
+    },
+    {
+        "Num": 3,
+        "NombreTour": "Pra Pra",
+        "Descripcion": "Pra Pra",
+        "Cantidad": 1,
+        "PrecioUnitario": 5000,
+        "PrecioUsuario": 5000
+    }
+]
+

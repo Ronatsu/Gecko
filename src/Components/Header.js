@@ -4,31 +4,34 @@ import { ShoppingCart } from '@material-ui/icons';
 import '../GeneralCSS/NavCss.css';
 import { Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import Modal from "react-responsive-modal";
+import TableShopping from '../Components/TableShopping';
+import carrito from '../Json/carrito.json';
+
+
 
 class Header extends Component {
+    state = {
+        open: false,
+    };
+
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
 
     render() {
+        const { open } = this.state;
+        var x = 0
+        {
+            carrito.map(row => (
+                <td> {x = x + row.PrecioUsuario} </td>
+            ))
+        }
         return (
-
-           /* <Navbar className="navColor" expand="lg">
-
-                 <Navbar.Brand className="ml-4" href="#home"><img src={require("../Imagenes/logos/gecko3.png")} width="170" height="50" /></Navbar.Brand>
-                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                 <Navbar.Collapse id="basic-navbar-nav">
-                     <Nav className="ml-auto mt-2 colorText">
-                         <Nav.Item className="mr-4" href="#Inicio">Inicio</Nav.Item>
-                         <Link to="/Tour"><Nav.Item className="mr-4" href="#Tours">Tours</Nav.Item></Link>
-                         <Nav.Item className="mr-4" href="#Servicios">Servicios</Nav.Item>
-                         <Nav.Item className="mr-4" href="#Consejos">Consejos</Nav.Item>
-                         <Nav.Item className="mr-4" href="#Acerca">Acerca de</Nav.Item>
-                         <Nav.Item className="mr-4" href="#Contacto">Contacto</Nav.Item>
-                     </Nav>
-                     <Nav className="ml-3 mr-3 colorCart">
-                         
-                     <Nav.Item><ShoppingCart id="icon"/></Nav.Item>
-                     </Nav>
-                 </Navbar.Collapse>
-             </Navbar>*/
             <nav className="navbar navbar-expand-lg navbar-light navColor">
                 <a className="navbar-brand ml-4" href="#"> <img src={require("../Imagenes/logos/gecko3.png")} width="170" height="50" /></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +43,7 @@ class Header extends Component {
                             <p className="" href="#">Inicio</p>
                         </li>
                         <li className="nav-item mr-4">
-                        <Link to="/Tour"><p className="" href="#">Tours</p></Link>
+                            <Link to="/Tour"><p className="" href="#">Tours</p></Link>
                         </li>
                         <li className="nav-item mr-4">
                             <p className="" href="#">Servicios</p>
@@ -56,23 +59,22 @@ class Header extends Component {
                         </li>
                     </ul>
                     <ul className="navbar-nav ml-3 mr-3 colorCart">
-                        <li className="">
+                        <li className="" onClick={this.onOpenModal}>
                             <ShoppingCart id="icon" />
                         </li>
                     </ul>
+                    <Modal open={open} onClose={this.onCloseModal} little>
+                        <h4>Carrito de Compras</h4>
+                        <TableShopping carrito={carrito} />
+                        <h4>Monto Total: ₡{x}</h4>
+                        <Button color="info">Confirmar Compra</Button>{' '}
+                    </Modal>
+
                 </div>
             </nav>
         );
     }
 }
 
+
 export default Header;
-/**
- * <NavDropdown title="Servicios" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown>
- */
