@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d9d0760b.chunk.css",
+    "main.js": "/static/js/main.6628370f.chunk.js",
+    "main.js.map": "/static/js/main.6628370f.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.14686bf5.chunk.css": "/static/css/2.14686bf5.chunk.css",
+    "static/js/2.5d3830b0.chunk.js": "/static/js/2.5d3830b0.chunk.js",
+    "static/js/2.5d3830b0.chunk.js.map": "/static/js/2.5d3830b0.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.41c8da60b96669b84257523bc37c795d.js": "/precache-manifest.41c8da60b96669b84257523bc37c795d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.14686bf5.chunk.css.map": "/static/css/2.14686bf5.chunk.css.map",
+    "static/css/main.d9d0760b.chunk.css.map": "/static/css/main.d9d0760b.chunk.css.map",
+    "static/media/1200px-Poas_crater.jpg": "/static/media/1200px-Poas_crater.9c4b2f38.jpg",
+    "static/media/257996_piedra.jpg": "/static/media/257996_piedra.53af8e03.jpg",
+    "static/media/article.jpg": "/static/media/article.e29cd00a.jpg",
+    "static/media/bajos.jpg": "/static/media/bajos.11a3ae33.jpg",
+    "static/media/espSnt.jpg": "/static/media/espSnt.e7bb45a3.jpg",
+    "static/media/gecko2.png": "/static/media/gecko2.21323779.png",
+    "static/media/gecko3.png": "/static/media/gecko3.5aecf0e6.png",
+    "static/media/volPoas.jpg": "/static/media/volPoas.95fc2262.jpg"
+  }
+}

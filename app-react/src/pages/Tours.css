@@ -1,0 +1,33 @@
+.all{
+  background-color: #353531;
+}
+.sidebar{
+  margin: 0;
+  padding: 0;
+}
+.filterText{
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+.card{
+  background-color: #353531;
+  color: #ffffff;
+}
+.card :hover{
+  background-color: #a5dd3f;
+  color: #353531;
+}
+.card-header{
+  text-align: center;
+    display: block;
+    padding: 25px;
+    text-decoration: none;
+}
+.card-body{
+  background-color: #a5dd3f;
+  color: #353531;
+}
+  div.content {
+    background-color: #ffffff;
+  }
