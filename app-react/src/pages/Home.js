@@ -13,6 +13,7 @@ class Home extends Component {
 
   render() {
     return (
+      
       <div className="all">
         <Container>
           <Row>
@@ -22,7 +23,7 @@ class Home extends Component {
               <br>
               </br>
             </div>
-
+            
             <Col md="12" lg="12">
 
               <VideoReact />
@@ -37,8 +38,10 @@ class Home extends Component {
                 <Card.Footer className="text-muted">¡Disfruta el viaje!</Card.Footer>
               </Card>
 
+              
 
             </div>
+            
           </Row>
         </Container>
       </div>

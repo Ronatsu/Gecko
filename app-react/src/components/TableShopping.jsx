@@ -2,6 +2,7 @@ import { Table, Button } from 'reactstrap';
 import React from 'react';
 
 export default function TableShopping(props) {
+
     return (
       <Table responsive>
         <thead>
@@ -18,14 +19,14 @@ export default function TableShopping(props) {
         <tbody>
           {
             props.carrito.map(row => ( 
-              <tr>
-                <td> {row.Num} </td>
+              <tr key = {row.Num}>
+                <td key = {row.Num}> {row.Num} </td>
                 <td> {row.NombreTour} </td>
                 <td> {row.Descripcion} </td>
                 <td> {row.Cantidad} </td>
                 <td> {row.PrecioUnitario} </td>
                 <td> {row.PrecioUsuario} </td>
-                <td><Button color="warning">Remover</Button>{' '}</td>
+                <td key = {row.Num}><Button  color="warning">Remover</Button>{' '}</td>
               </tr>
             ))
           }
@@ -34,6 +35,8 @@ export default function TableShopping(props) {
      
     );
   }
+
+
 
 
 

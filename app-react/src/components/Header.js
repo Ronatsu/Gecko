@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import Modal from "react-responsive-modal";
 import TableShopping from '../components/TableShopping';
 import carrito from '../Json/carrito.json';
-
-
+import * as jsPDF from "jspdf";
+import { renderToString } from "react-dom/server";
 
 class Header extends Component {
     state = {
@@ -21,6 +21,46 @@ class Header extends Component {
 
     onCloseModal = () => {
         this.setState({ open: false });
+    };
+
+    pdfDownload() {
+        console.log('Button was clicked2!')
+        const string = renderToString(<TableShopping carrito={carrito} />);
+        const doc = new jsPDF();
+
+
+        doc.setFontSize(22);
+        doc.setTextColor(255, 0, 0);
+        doc.text(10, 10, 'Gecko Aventuras');
+
+        doc.setFontSize(12);
+        doc.setTextColor(24, 24, 24);
+        doc.text(10, 20, 'Cliente: Ronny Alvarez Gomez');
+        doc.text(10, 30, 'Correo: ronny23780797@gmail.com');
+        doc.text(10, 40, 'Número Teléfonico: 83012564');
+        doc.text(10, 50, 'Dirección: San Roque, Grecia');
+        doc.text(10, 60, 'Fecha Emision: 23 de Julio 2019');
+        doc.text(10, 70, 'Gecko Aventuras es una empresa desarrollado por estudiantes sin fines de lucro.');
+
+        var x = 0
+        {
+            carrito.map(row => (
+                <td> {x = x + row.PrecioUsuario} </td>
+            ))
+        }
+
+        doc.text(10, 80, 'Monto Cancelado en Colones: ');
+        const string2 = renderToString(x);
+        doc.fromHTML(string2,20,80);
+
+        doc.setFontSize(5);
+        doc.setTextColor(24, 24, 24);
+        doc.fromHTML(string , 20, 90, {
+            'width': 100
+        });
+
+
+        doc.save('ComprobanteGeckoAventuras.pdf');
     };
 
     render() {
@@ -40,16 +80,16 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto colorText mt-2">
                         <li className="nav-item mr-4">
-                        <Link to="/"><p className="" href="#">Inicio</p></Link>
+                            <Link to="/"><p className="" href="#">Inicio</p></Link>
                         </li>
                         <li className="nav-item mr-4">
-                        <Link to="/tour"><p className="" href="#">Tours</p></Link>
+                            <Link to="/tour"><p className="" href="#">Tours</p></Link>
                         </li>
                         <li className="nav-item mr-4">
                             <p className="" href="#">Servicios</p>
                         </li>
                         <li className="nav-item mr-4">
-                        <Link to="/blogPost"><p className="" href="#">Consejos</p></Link>
+                            <Link to="/blogPost"><p className="" href="#">Consejos</p></Link>
                         </li>
                         <li className="nav-item mr-4">
                             <p className="" href="#">Acerda de</p>
@@ -58,7 +98,7 @@ class Header extends Component {
                             <p className="" href="#">Contacto</p>
                         </li>
                         <li className="nav-item mr-4">
-                        <Link to="/db"><p className="" href="#">testDB</p></Link>
+                            <Link to="/db"><p className="" href="#">testDB</p></Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav ml-3 mr-3 colorCart">
@@ -70,7 +110,7 @@ class Header extends Component {
                         <h4>Carrito de Compras</h4>
                         <TableShopping carrito={carrito} />
                         <h4>Monto Total: ₡{x}</h4>
-                        <Button color="info">Confirmar Compra</Button>{' '}
+                        <Button onClick={this.pdfDownload} color="info">Confirmar Compra</Button>{' '}
                     </Modal>
 
                 </div>
