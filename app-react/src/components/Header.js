@@ -59,7 +59,6 @@ class Header extends Component {
             'width': 100
         });
 
-
         doc.save('ComprobanteGeckoAventuras.pdf');
     };
 
