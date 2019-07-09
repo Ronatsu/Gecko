@@ -20,7 +20,7 @@ export default function TableShopping(props) {
           {
             props.carrito.map(row => ( 
               <tr key = {row.Num}>
-                <td key = {row.Num}> {row.Num} </td>
+                <td> {row.Num} </td>
                 <td> {row.NombreTour} </td>
                 <td> {row.Descripcion} </td>
                 <td> {row.Cantidad} </td>
