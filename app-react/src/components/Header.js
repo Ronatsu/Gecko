@@ -88,7 +88,7 @@ class Header extends Component {
                             <p className="" href="#">Servicios</p>
                         </li>
                         <li className="nav-item mr-4">
-                            <Link to="/blogPost"><p className="" href="#">Consejos</p></Link>
+                            <Link to="/blogList"><p className="" href="#">Consejos</p></Link>
                         </li>
                         <li className="nav-item mr-4">
                             <p className="" href="#">Acerda de</p>

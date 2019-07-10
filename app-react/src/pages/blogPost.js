@@ -15,7 +15,7 @@ class BlogPost extends Component {
                         <p>Posted on January 1, 2019 at 12:00 PM</p>
 
 
-                        <img class="img-fluid rounded" src={require("../Imagenes/Imagen2.jpg")}/>
+                        <img class="img-fluid rounded" src={require("../Imagenes/blogs/Imagen2.jpg")}/>
 
                         <p class="lead">
                             Es importante saber que hacer en caminatas largas en montañas, carreteras y lugares accidentados.
