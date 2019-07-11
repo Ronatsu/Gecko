@@ -102,12 +102,12 @@ class Tour extends Component {
                         <div className="filterText">
                             <strong>Filtros</strong>
                         </div>
-                        <div className="card">
-                            <div className="card-header" data-toggle="collapse" href="#collapseOne">
+                        <div className="card" id="cardID">
+                            <div className="card-header" id="CH_ID"data-toggle="collapse" href="#collapseOne">
                                 Collapsible Group Item #1
                                 </div>
                             <div id="collapseOne" className="collapse show">
-                                <div class="card-body">
+                                <div className="card-body" id="CB_ID">
                                     <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
                                     <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
                                     <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
@@ -115,12 +115,12 @@ class Tour extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="card">
-                            <div className="card-header" data-toggle="collapse" href="#collapseOne2">
+                        <div className="card" id="cardID">
+                            <div className="card-header" id="CH_ID" data-toggle="collapse" href="#collapseOne2">
                                 Collapsible Group Item #1
                                 </div>
                             <div id="collapseOne2" className="collapse show">
-                                <div class="card-body">
+                                <div className="card-body" id="CB_ID">
                                     <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
                                     <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
                                     <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>

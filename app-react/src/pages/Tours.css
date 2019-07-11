@@ -10,21 +10,21 @@
   color: #ffffff;
   text-align: center;
 }
-.card{
+#cardID{
   background-color: #353531;
   color: #ffffff;
 }
-.card :hover{
+#cardID :hover{
   background-color: #a5dd3f;
   color: #353531;
 }
-.card-header{
+#CH_ID {
   text-align: center;
     display: block;
     padding: 25px;
     text-decoration: none;
 }
-.card-body{
+#CB_ID{
   background-color: #a5dd3f;
   color: #353531;
 }
