@@ -1,81 +1,151 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 class BlogPost extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            id: 1
+            , title: ''
+            , date: ''
+            , description: ''
+            , paragraphs: []
+            , comments: []
+            , newComment: ''
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.save=this.save.bind(this);
+    }
+    handleChange = event => {
+        event.preventDefault();
+        const nameInput = event.target.name;
+        const valueInput = event.target.value;
+        this.setState({
+            [nameInput]: valueInput
+        });
+    }
+
+   save(e){
+        console.log('1');
+        e.preventDefault();
+    
+        axios.post(`http://localhost:9000/BlogList/addComments`, {
+            id: this.state.id,
+            newComment: this.state.newComment
+        })
+            .then(res => {
+                this.setState({newComment: ''})
+                
+                axios.post(`http://localhost:9000/BlogList/getComments`, {
+                    id: this.state.id
+                }
+                )
+                    .then(res => {
+                        const c = res.data;
+                        this.setState({
+                            comments: c[0]
+                        });
+                    })
+            })
+    }
+
+    componentDidMount() {
+
+        axios.post(`http://localhost:9000/BlogList/getBlogPostById`, {
+            id: this.state.id
+        }
+        )
+            .then(res => {
+                const blog = res.data[0][0];
+                this.setState({
+                    title: blog.title
+                    , date: blog.date
+                    , description: blog.description
+                });
+
+            })
+
+        axios.post(`http://localhost:9000/BlogList/getParagraph`, {
+            id: this.state.id
+        }
+        )
+            .then(res => {
+                const p = res.data;
+                this.setState({
+                    paragraphs: p[0]
+                });
+            })
+
+        axios.post(`http://localhost:9000/BlogList/getComments`, {
+            id: this.state.id
+        }
+        )
+            .then(res => {
+                const c = res.data;
+                this.setState({
+                    comments: c[0]
+                });
+            })
+    }
     render() {
+
+        let paragraph = this.state.paragraphs.map((p) => {
+            return (
+
+                <p>
+                    {p.paragraph}
+                </p >
+            );
+        })
+
+        let comments = this.state.comments.map((c) => {
+            return (
+
+                <div className="media mb-4 col-lg-12">
+                    <img className="d-flex mr-3 rounded-circle" src={require("../Imagenes/perfil.png")} height="50" />
+                    <div className="media-body">
+                        <h5 className="mt-0">Usuario Anónimo</h5>
+                        {c.comment}
+                    </div>
+                </div>
+
+            );
+        })
+
         return (
             <div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="mt-4">CAMINANDO ENTRE MONTAÑAS</h1>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <h1 className="mt-4">{this.state.title}</h1>
                         </div>
 
-                        <p>Posted on January 1, 2019 at 12:00 PM</p>
+                        <p>Publicado: {this.state.date}</p>
 
 
-                        <img class="img-fluid rounded" src={require("../Imagenes/blogs/Imagen2.jpg")}/>
+                        <img className="img-fluid rounded" src={require("../Imagenes/blogs/Imagen2.jpg")} />
 
-                        <p class="lead">
-                            Es importante saber que hacer en caminatas largas en montañas, carreteras y lugares accidentados.
-                            </p>
-
-                        <p>
-                            Una de las tantas cosas que hay que tener en cuenta antes de hacer una caminata, es el lugar donde irás y los msnm donde estarás ya que esos factores dependerá mucho de lo que tendrás que llevar para un trekking.
+                        <p className="lead">
+                            {this.state.description}
                         </p>
 
-                        <p>
-                            Ya se por un día entero o si piensas acampar en la ruta del trekking. tienes que llevar consigo lo importante y necesario para que tu mochila no sea muy pesada.
-                        </p>
+                        {paragraph}
 
-                        <p>
-                            Aquí les mostrare seis consejos muy eficaces al hacer una caminata.
-                        </p>
-                        <ul>
-                            <li>Llevar ropa muy ligera y mínimo un cambio porque al transpirar puedes enfermarte.</li>
-                            <li>Antes de hacer una ruta alta es recomendable primero adaptarse al clima por unas horas.</li>
-                            <li>Tener en el camino frutas, de preferencia los plátanos, son ricas en potasio y ayuda mucho a no tener calambres.</li>
-                            <li>Tener bien en cuenta la Orientación para no perderse, más seguridad usar una brújula.</li>
-                            <li>Llevar envases con agua para hidratarse en el camino muy importante.</li>
-                            <li>Tomar fotografías de cada punto así será como una huella por si te desorientas.</li>
-                        </ul>
-
-                        <div class="card my-4 col-lg-12">
-                            <h5 class="card-header">Deja un Comentario:</h5>
-                            <div class="card-body">
+                        <div className="card my-4 col-lg-12">
+                            <h5 className="card-header">Deja un Comentario:</h5>
+                            <div className="card-body">
                                 <form>
-                                    <div class="form-group">
-                                        <textarea class="form-control" rows="3"></textarea>
+                                    <div className="form-group">
+                                        <textarea className="form-control" rows="3" name="newComment" onChange={this.handleChange}></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Publicar</button>
+                                    <button onClick={this.save} className="btn btn-primary">Publicar</button>
                                 </form>
                             </div>
                         </div>
 
-                        <div class="media mb-4">
-                            <img class="d-flex mr-3 rounded-circle" src={require("../Imagenes/perfil.png")} height="50"/>
-                            <div class="media-body">
-                                <h5 class="mt-0">Usuario Anónimo</h5>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-
-                        <div class="media mb-4">
-                        <img class="d-flex mr-3 rounded-circle" src={require("../Imagenes/perfil.png")} height="50"/>
-                            <div class="media-body">
-                                <h5 class="mt-0">Usuario Anónimo</h5>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
+                        {comments}
 
                     </div>
                 </div>

@@ -28,7 +28,7 @@ class BlogList extends Component {
                 <div className="col-sm-4">
                     <Link to="/blogPost">
                     <div className="card mb-3">
-                        <img class="img-fluid rounded" src={require("../Imagenes/blogs/Imagen2.jpg")} />
+                        <img class="img-fluid rounded" src={require("../Imagenes/blogs/Imagen1.jpg")} />
                         <div className="card-body">
                             <h5 className="card-title">  {postBlog.title}</h5>
                             <p className="card-text">{postBlog.description}</p>
