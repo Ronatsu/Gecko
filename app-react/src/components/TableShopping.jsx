@@ -1,44 +1,21 @@
 import { Table, Button } from 'reactstrap';
 import React from 'react';
 
-export default function TableShopping(props) {
+const TableShopping = (props) => {
 
-    return (
-      <Table responsive>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Nombre Tour</th>
-            <th>Descripcion</th>
-            <th>Cantidad</th>
-            <th>Precio Unitario</th>
-            <th>Precio Usuario</th>
-            <th>Eliminar</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            props.carrito.map(row => ( 
-              <tr key = {row.Num}>
-                <td key = {row.Num}> {row.Num} </td>
-                <td> {row.NombreTour} </td>
-                <td> {row.Descripcion} </td>
-                <td> {row.Cantidad} </td>
-                <td> {row.PrecioUnitario} </td>
-                <td> {row.PrecioUsuario} </td>
-                <td key = {row.Num}><Button  color="warning">Remover</Button>{' '}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </Table>
-     
-    );
-  }
+  var sale = 0;
+  sale = props.quantity * props.price;
+  return (
+    <li>
+      <span> name: {props.children}, description:{props.description}, quantity:{props.quantity}, price unit:{props.price}, price sale:{sale} </span>
+      <button onClick={props.delEvent}>eliminar</button>
+    </li>
+  );
+}
+
+export default TableShopping;
 
 
 
 
-
- 
 
