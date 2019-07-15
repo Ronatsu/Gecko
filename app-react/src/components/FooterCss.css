@@ -1,3 +1,15 @@
-.footerColor{
+.page-footer{
     background-color: #353531;
+    color: #ffffff;
+}
+.greenColor{
+    background-color: #a5dd3f;
+}
+
+.footer-copyright{
+    background-color: #2c2c29;
+}
+.fab{
+    background-color: #ffffff;
+    color: #ffffff;
 }

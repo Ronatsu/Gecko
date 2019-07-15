@@ -1,43 +1,56 @@
 import React, { Component } from "react";
-import '../GeneralCSS/AboutUs.css';
+import '../AboutUs/AboutUs.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Figure from 'react-bootstrap/Figure'
-import CardComponent from '../Components/Card';
+import Figure from 'react-bootstrap/Figure';
 import { ShoppingCart } from '@material-ui/icons';
+import axios from 'axios';
+import Card from 'react-bootstrap/Card';
 
 class AboutUs extends Component {
-    constructor(props) {
-        super(props);
-        this.mision = {
-            name: "Misión",
-            Description: "Somos la primer empresa y sitio web enfocado en el sector turístico de occidente,"
-                + " buscando dar a conocer muchos sitios desconocidos para los mismos habitantes de las zonas, "
-                + " donde puedan disfrutar tranquilamente de diferentes ambientes."
-                + " Nosotros como empresa estamos dedicados en el disfrute de cada persona que visite cada uno de los lugares que ofrecemos."
-        }
-        this.vision = {
-            name: "Visión",
-            Description: "Deseamos poder tener mayor compromiso con el sector turístico privado de occidente, para entablar relaciones donde nos permitan una mayor inclusión de sitios turísticos, favoreciendo cada una de las partes involucradas, para brindar un mejor y mayor servicio a todo usuario interesado en conocer estas zonas. Además, nos vemos en un período de 5 años, expandiendo nuestro alcance a no solo el occidente sino abarcar el sector turístico como por ejemplo en zonas de playa, logrando ofrecer más variedad de tours a nuestros usuarios."
-        }
-
-        this.historia = {
-            name: "Historia",
-            Description: "Gecko Aventuras comienzan a mediados del año 2015 por un grupo de amigos universitarios del cantón de Grecia, con ganas de salir a conocer lugares nuevos. Impulsados por estas ganas de turistear, con un bajo presupuesto económico y poco tiempo para salir a disfrutar, comenzaron a buscar lugares cercanos para poder aprovechar el tiempo y que no tuvieran que gastar mucho dinero. Sin embargo, encontrar estos lugares no fue nada fácil, ya que en internet hay poca información y cuando encontraban lugares chivas siempre eran lejos de sus hogares."
-                + " Poco a poco, siempre con las ganas de pasear, conocer y explorar nuevos lugares, fueron encontrando lugares muy “chivas” y pocos conocidos, de la Zona de Occidente. Aquí es donde surge la idea de crear una empresa que ayude a las personas con sus mismos intereses, con el fin de compartir sus experiencias y brindar tours que ofrecen todo lo necesario para que todos aquellos ansiosos por pasear puedan sacarle más provecho a la experiencia."
-                + " En el año 2017, la Gecko Aventuras abre sus puertas formalmente, con nuevas ideas y con el objetivo de ofrecer un servicio calificado para los viajeros de esta región, con un gran portafolio que fue creado para ofrecer una gran variedad de opciones turísticas en la Zona de Occidente."
-                + " Durante el tiempo que  Gecko Aventuras se ha mantenido en funcionamiento se han ido mejorando los estándares de calidad en cuanto al servicio al cliente, buscando siempre el apoyo de la tecnología y manteniendo al personal de la Empresa, que es altamente calificado y de gran experiencia en el manejo del turismo."
+    constructor() {
+        super();
+        this.state = {
+            infoPage: []
         }
     }
+
+    componentWillMount() {
+        console.log("Legue aqui");
+        axios.get(`http://localhost:9000/MedicalInfo/getInfoPage`)
+            .then(res => {
+                const tours = res.data;
+                this.setState({ infoPage: tours[0] });
+                console.log(tours[0]);
+            })
+
+
+        console.log(this.state.infoPage);
+    }
+
+
     render() {
 
+        let info = this.state.infoPage.map((info_page) =>
+            <Card>
+                <Card.Body>
+                    <Card.Title>{info_page.titleText}</Card.Title>
+                    <Card.Text>
+                        {info_page.text}
+                    </Card.Text>
+
+
+                </Card.Body>
+            </Card>
+        );
+
         let dataEnterprise =
-            <p>
-                <ShoppingCart /> <h4>+506 8888-8888</h4>
+            <div className="infoEnterprise" fluid>
+                <ShoppingCart /><h4>+506 8888-8888</h4>
                 <ShoppingCart /> <h4>Gecko Aventuras S.A</h4>
                 <ShoppingCart /> <h4>Alajuela, Costa Rica</h4>
-            </p>
+            </div>
         return (
             <div className="DivAbout">
                 <Container className="CssAbout">
@@ -54,35 +67,13 @@ class AboutUs extends Component {
                                             src={require("../Imagenes/logos/gecko2.png")}
                                         />
                                     </Figure>
+                                    {dataEnterprise}
                                 </Col>
 
                                 <Col className="CssAbout">
-                                    <Row>
-                                        <Col className="CssAbout" lg="12">
-                                            <CardComponent
-                                                header={this.vision.name}
-                                                text={this.vision.Description}
-                                            />
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="CssAbout" lg="12">
-                                            <CardComponent
-                                                header={this.mision.name}
-                                                text={this.mision.Description}
-                                            />
-                                        </Col>
-                                    </Row>
+                                    {info}
                                 </Col>
                             </Row>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="CssAbout">
-                            <CardComponent
-                                header={this.historia.name}
-                                text={this.historia.Description}
-                            />
                         </Col>
                     </Row>
                 </Container>

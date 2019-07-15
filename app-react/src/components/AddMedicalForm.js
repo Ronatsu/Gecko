@@ -43,7 +43,7 @@ class AddMedicalForm extends Component {
 
     handleSubmitGEt = event => {
         event.preventDefault();
-        axios.get(`http://localhost:9000/MedicalInfo/getTours`)
+        axios.get(`http://localhost:9000/MedicalInfo/getLastTour`)
             .then(res => {
                 const tours = res.data;
                 //this.setState({ tours });
@@ -74,7 +74,7 @@ class AddMedicalForm extends Component {
                         <div className="row">
                             <div className="col-4 offset-1 text-ceter">
                                 {this.state.tours}
-                                <label className="form-control">Tour: {this.state.tours}</label>
+                                <label className="form-control">Tour: {this.state.tours.nameTour}</label>
                             </div>
                         </div>
                     </div>

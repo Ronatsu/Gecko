@@ -9,12 +9,17 @@ class TourCard extends Component {
     }
     render() {
         return (
-            <div>
-                <Card className="mt-3 mb-3 cardTour">
-                    <CardImg className="imagen" src={require("../Imagenes/logos/gecko2.png")} />
-                    <CardTitle className="centrado" >{this.props.tour.name}</CardTitle>
-                </Card>
-            </div>
+            <div class="card-deck">
+                        <div class="card card-shadow text-center jj">
+                            <div class="card-body">
+                                <h4 class="card-title">{this.props.tour.name}</h4>
+                                <p class="card-text">{this.props.tour.descripcion}</p>
+                                <div class="dropdown-divider"></div>
+                                <p class="card-text"><small class="text-muted">Team A</small></p>
+
+                            </div>
+                        </div>
+                    </div>
         );
     }
 }
