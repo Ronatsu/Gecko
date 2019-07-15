@@ -6,12 +6,9 @@ import { Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Modal from "react-responsive-modal";
 import TableShopping from '../components/TableShopping';
-import carrito from '../Json/carrito.json';
 import * as jsPDF from "jspdf";
 import { renderToString } from "react-dom/server";
 import UniqueId from 'react-html-id';
-import TravelList from '../components/TravelList';
-import TravelInput from '../components/TravelInput';
 
 class Header extends Component {
 
@@ -81,7 +78,7 @@ class Header extends Component {
 
         doc.setFontSize(10);
         doc.setTextColor(24, 24, 24);
-        doc.fromHTML(<TravelList />, 20, 90);
+        doc.fromHTML(<TableShopping />, 20, 90);
 
         doc.save('ComprobanteGeckoAventuras.pdf');
     };
@@ -121,7 +118,6 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto colorText mt-2">
                         <li className="nav-item mr-4">
-                            <TravelInput />
                             <button onClick={this.addTravel.bind(this)}> add travel </button>
                             <Link to="/"><p className="" href="#">Inicio</p></Link>
                         </li>
@@ -164,8 +160,6 @@ class Header extends Component {
 
                             }
                         </ul>
-
-                        <TravelList />
                         <h4>Monto Total: ₡{x}</h4>
                         <Button onClick={this.pdfDownload.bind(this)} color="info">Confirmar Compra</Button>{' '}
                     </Modal>
