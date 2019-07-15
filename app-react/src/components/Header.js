@@ -78,7 +78,7 @@ class Header extends Component {
 
         doc.setFontSize(10);
         doc.setTextColor(24, 24, 24);
-        doc.fromHTML(<TableShopping />, 20, 90);
+        doc.fromHTML(string , 20, 90);
 
         doc.save('ComprobanteGeckoAventuras.pdf');
     };
