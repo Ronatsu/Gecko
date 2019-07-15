@@ -94,7 +94,7 @@ class Header extends Component {
         console.log('Add travel');
 
         const newItem = {
-            id: this.nextUniqueId(), name: 'Casa de Ronny', description: 'SR', quantity: 1, price: 3600 
+            id: this.nextUniqueId(), name: 'Casa de Ronny', description: 'SR', quantity: 1, price: 3600
         };
 
         this.setState({ travels: this.state.travels.concat(newItem) })
