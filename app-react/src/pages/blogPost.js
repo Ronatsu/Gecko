@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import axios from 'axios';
+import $ from 'jquery';
 
 class BlogPost extends Component {
 
@@ -11,13 +11,15 @@ class BlogPost extends Component {
             , title: ''
             , date: ''
             , description: ''
+            ,image:''
             , paragraphs: []
             , comments: []
             , newComment: ''
         }
         this.handleChange = this.handleChange.bind(this);
-        this.save=this.save.bind(this);
+        this.save = this.save.bind(this);
     }
+   
     handleChange = event => {
         event.preventDefault();
         const nameInput = event.target.name;
@@ -26,29 +28,33 @@ class BlogPost extends Component {
             [nameInput]: valueInput
         });
     }
+    save(e) {
+        if (this.state.newComment != "") {
+            e.preventDefault();
 
-   save(e){
-        console.log('1');
-        e.preventDefault();
-    
-        axios.post(`http://localhost:9000/BlogList/addComments`, {
-            id: this.state.id,
-            newComment: this.state.newComment
-        })
-            .then(res => {
-                this.setState({newComment: ''})
-                
-                axios.post(`http://localhost:9000/BlogList/getComments`, {
-                    id: this.state.id
-                }
-                )
-                    .then(res => {
-                        const c = res.data;
-                        this.setState({
-                            comments: c[0]
-                        });
-                    })
+            axios.post(`http://localhost:9000/BlogList/addComments`, {
+                id: this.state.id,
+                newComment: this.state.newComment
             })
+                .then(res => {
+                   
+                    $('#newComment').val('');
+
+                    axios.post(`http://localhost:9000/BlogList/getComments`, {
+                        id: this.state.id
+                    })
+                        .then(res => {
+                            const c = res.data;
+                            this.setState({
+                                comments: c[0]
+                            });
+                        })
+                })
+        } else {
+            e.preventDefault();
+            alert("favor escriba algo");
+        }
+
     }
 
     componentDidMount() {
@@ -63,6 +69,7 @@ class BlogPost extends Component {
                     title: blog.title
                     , date: blog.date
                     , description: blog.description
+                    ,image:blog.image
                 });
 
             })
@@ -138,9 +145,9 @@ class BlogPost extends Component {
                             <div className="card-body">
                                 <form>
                                     <div className="form-group">
-                                        <textarea className="form-control" rows="3" name="newComment" onChange={this.handleChange}></textarea>
+                                        <textarea className="form-control" rows="3" id="newComment" name="newComment" onChange={this.handleChange}></textarea>
                                     </div>
-                                    <button onClick={this.save} className="btn btn-primary">Publicar</button>
+                                    <button onClick={this.save} className="btn btn-primary" name="btnSave">Publicar</button>
                                 </form>
                             </div>
                         </div>

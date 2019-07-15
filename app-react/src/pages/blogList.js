@@ -21,16 +21,17 @@ class BlogList extends Component {
     }
     render() {
         let blogs = this.state.postList.map((postBlog) => {
-            console.log(postBlog.image);
-            var url = postBlog.image;
+           /* var url= `${assetPath}../Imagenes/blogs/${postBlog.image}`;*/
+
             return (
 
                 <div className="col-sm-4">
                     <Link to="/blogPost">
                     <div className="card mb-3">
+                    
                         <img class="img-fluid rounded" src={require("../Imagenes/blogs/Imagen1.jpg")} />
                         <div className="card-body">
-                            <h5 className="card-title">  {postBlog.title}</h5>
+                            <h5 className="card-title">  {url}</h5>
                             <p className="card-text">{postBlog.description}</p>
                         </div>
                         <div className="card-footer text-muted">Publicado: {postBlog.date}</div>
