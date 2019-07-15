@@ -38,8 +38,20 @@ class Header extends Component {
     };
 
     pdfDownload() {
-        console.log('Button was clicked2!')
-        const string = renderToString(<TableShopping />);
+        const string = renderToString(
+            <div>
+                {
+                    this.state.travels.map((travel, index) => {
+                        return (<TableShopping description={travel.description}
+                            quantity={travel.quantity}
+                            price={travel.price}
+                            key={travel.id}
+                            delEvent={this.deleteTravel.bind(this, index)}
+                        >{travel.name}</TableShopping>)
+                    })
+
+                }
+            </div>);
         const doc = new jsPDF();
 
 
@@ -58,8 +70,8 @@ class Header extends Component {
 
         var x = 0
         {
-            carrito.map(row => (
-                <td> {x = x + row.PrecioUsuario} </td>
+            this.state.travels.map((row) => (
+                <td> {x = x + (row.price * row.quantity)} </td>
             ))
         }
 
@@ -75,18 +87,18 @@ class Header extends Component {
     };
 
 
-    deleteTravel = (index, e) =>{
+    deleteTravel = (index, e) => {
         const travels = Object.assign([], this.state.travels);
         travels.splice(index, 1);
-        this.setState({travels:travels})
+        this.setState({ travels: travels })
     }
 
     render() {
         const { open } = this.state;
         var x = 0
         {
-            carrito.map(row => (
-                <td> {x = x + row.PrecioUsuario} </td>
+            this.state.travels.map(row => (
+                <td> {x = x + (row.price * row.quantity)} </td>
             ))
         }
         return (
@@ -130,11 +142,12 @@ class Header extends Component {
                         <ul>
                             {
                                 this.state.travels.map((travel, index) => {
-                                    return (<TableShopping description={travel.description} 
-                                        quantity={travel.quantity} 
+                                    return (<TableShopping description={travel.description}
+                                        quantity={travel.quantity}
                                         price={travel.price}
-                                        delEvent={this.deleteTravel.bind(this, index)} 
-                                        >{travel.name}</TableShopping>)
+                                        key={travel.id}
+                                        delEvent={this.deleteTravel.bind(this, index)}
+                                    >{travel.name}</TableShopping>)
                                 })
 
                             }
@@ -142,7 +155,7 @@ class Header extends Component {
 
                         <TravelList />
                         <h4>Monto Total: ₡{x}</h4>
-                        <Button onClick={this.pdfDownload} color="info">Confirmar Compra</Button>{' '}
+                        <Button onClick={this.pdfDownload.bind(this)} color="info">Confirmar Compra</Button>{' '}
                     </Modal>
 
                 </div>
