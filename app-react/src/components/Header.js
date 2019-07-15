@@ -9,13 +9,24 @@ import TableShopping from '../components/TableShopping';
 import carrito from '../Json/carrito.json';
 import * as jsPDF from "jspdf";
 import { renderToString } from "react-dom/server";
-
+import UniqueId from 'react-html-id';
 import TravelList from '../components/TravelList';
 import TravelInput from '../components/TravelInput';
 
 class Header extends Component {
-    state = {
-        open: false,
+
+    constructor() {
+        super();
+        UniqueId.enableUniqueIds(this);
+        this.state = {
+            travels: [
+                { id: this.nextUniqueId(), name: 'Cerro Spirit Sante', description: 'Naranjo Montanna', quantity: 1, price: 5000 },
+                { id: this.nextUniqueId(), name: 'Laguna poas', description: 'Poas Rio', quantity: 3, price: 7500 },
+                { id: this.nextUniqueId(), name: 'Iglesia de SR', description: 'SanRoque Catolico', quantity: 1, price: 1250 },
+            ],
+            open: false,
+        }
+        console.log(this.state);
     };
 
     onOpenModal = () => {
@@ -28,7 +39,7 @@ class Header extends Component {
 
     pdfDownload() {
         console.log('Button was clicked2!')
-        const string = renderToString( <TravelList />);
+        const string = renderToString(<TableShopping />);
         const doc = new jsPDF();
 
 
@@ -54,14 +65,21 @@ class Header extends Component {
 
         doc.text(10, 80, 'Monto Cancelado en Colones: ');
         const string2 = renderToString(x);
-        doc.fromHTML(string2,20,80);
+        doc.fromHTML(string2, 20, 80);
 
         doc.setFontSize(10);
         doc.setTextColor(24, 24, 24);
-        doc.fromHTML(<TravelList /> , 20, 90);
+        doc.fromHTML(<TravelList />, 20, 90);
 
         doc.save('ComprobanteGeckoAventuras.pdf');
     };
+
+
+    deleteTravel = (index, e) =>{
+        const travels = Object.assign([], this.state.travels);
+        travels.splice(index, 1);
+        this.setState({travels:travels})
+    }
 
     render() {
         const { open } = this.state;
@@ -80,7 +98,7 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto colorText mt-2">
                         <li className="nav-item mr-4">
-                        <TravelInput />
+                            <TravelInput />
                             <Link to="/"><p className="" href="#">Inicio</p></Link>
                         </li>
                         <li className="nav-item mr-4">
@@ -109,7 +127,19 @@ class Header extends Component {
                     </ul>
                     <Modal open={open} onClose={this.onCloseModal} little>
                         <h4>Carrito de Compras</h4>
-                        <TableShopping carrito={carrito} />
+                        <ul>
+                            {
+                                this.state.travels.map((travel, index) => {
+                                    return (<TableShopping description={travel.description} 
+                                        quantity={travel.quantity} 
+                                        price={travel.price}
+                                        delEvent={this.deleteTravel.bind(this, index)} 
+                                        >{travel.name}</TableShopping>)
+                                })
+
+                            }
+                        </ul>
+
                         <TravelList />
                         <h4>Monto Total: ₡{x}</h4>
                         <Button onClick={this.pdfDownload} color="info">Confirmar Compra</Button>{' '}
