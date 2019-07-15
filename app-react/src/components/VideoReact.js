@@ -7,8 +7,9 @@ import "../../node_modules/video-react/dist/video-react.css"; // import css
 class VideoReact extends Component {
     render() {
         return (
-            <Player>
-                <source src="https://youtu.be/gokQtVCxslw" />
+            <Player
+            poster={require("../Imagenes/colash.png")}>
+                <source src={require("../Imagenes/VideoPromo.mp4")} />
             </Player>
         );
     }

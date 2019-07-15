@@ -9,11 +9,31 @@ import CardsComponent from '../components/CardsComponent';
 import './Home.css';
 import Card from 'react-bootstrap/Card';
 
+
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      listTopTours: [],
+      listTemp: [
+        {
+          nameTour: "Kenneth",
+          descriptionTour: "Holiwis"
+        },
+        {
+          nameTour: "Andrey",
+          descriptionTour: "Holiwis"
+        }
+      ]
+    }
+  }
+
+
 
   render() {
+
     return (
-      
+
       <div className="all">
         <Container>
           <Row>
@@ -23,7 +43,7 @@ class Home extends Component {
               <br>
               </br>
             </div>
-            
+
             <Col md="12" lg="12">
 
               <VideoReact />
@@ -38,10 +58,10 @@ class Home extends Component {
                 <Card.Footer className="text-muted">¡Disfruta el viaje!</Card.Footer>
               </Card>
 
-              
+
 
             </div>
-            
+
           </Row>
         </Container>
       </div>
