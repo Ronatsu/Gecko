@@ -31,7 +31,7 @@ class BlogList extends Component {
                     
                         <img class="img-fluid rounded" src={require("../Imagenes/blogs/Imagen1.jpg")} />
                         <div className="card-body">
-                            <h5 className="card-title">  {url}</h5>
+                            <h5 className="card-title">  </h5>
                             <p className="card-text">{postBlog.description}</p>
                         </div>
                         <div className="card-footer text-muted">Publicado: {postBlog.date}</div>
