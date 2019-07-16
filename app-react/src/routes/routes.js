@@ -7,6 +7,7 @@ import Tour from '../pages/Tours';
 import blogList from '../pages/blogList';
 import blogPost from '../pages/blogPost';
 import InfoTour from '../pages/infoTour';
+import contact from '../pages/contact';
 import AboutUS from '../AboutUs/AboutUs';
 
 
@@ -26,6 +27,7 @@ class AppRoutes extends Component {
                     <Route exact path="/blogPost" component={blogPost} />
                     <Route exact path="/AboutUS" component={AboutUS} />
                     <Route exact path="/infoTour" component={InfoTour} />
+                    <Route exact path="/contact" component={contact} />
                 </Switch>
             </App>
         );

@@ -51,6 +51,7 @@ class AboutUs extends Component {
                 <ShoppingCart /> <h4>Gecko Aventuras S.A</h4>
                 <ShoppingCart /> <h4>Alajuela, Costa Rica</h4>
             </div>
+            
         return (
             <div className="DivAbout">
                 <Container className="CssAbout">
