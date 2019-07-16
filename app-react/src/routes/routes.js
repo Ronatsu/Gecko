@@ -6,7 +6,9 @@ import db from '../components/AddMedicalForm';
 import Tour from '../pages/Tours';
 import blogList from '../pages/blogList';
 import blogPost from '../pages/blogPost';
+import InfoTour from '../pages/infoTour';
 import AboutUS from '../AboutUs/AboutUs';
+
 
 class AppRoutes extends Component {
     constructor(props) {
@@ -23,6 +25,7 @@ class AppRoutes extends Component {
                     <Route exact path="/blogList" component={blogList} />
                     <Route exact path="/blogPost" component={blogPost} />
                     <Route exact path="/AboutUS" component={AboutUS} />
+                    <Route exact path="/infoTour" component={InfoTour} />
                 </Switch>
             </App>
         );

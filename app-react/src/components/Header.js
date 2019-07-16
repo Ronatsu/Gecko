@@ -131,7 +131,7 @@ class Header extends Component {
                             <Link to="/blogList"><p className="" href="#">Consejos</p></Link>
                         </li>
                         <li className="nav-item mr-4">
-                            <p className="" href="#">Acerda de</p>
+                        <Link to="/AboutUS">    <p className="" href="#">Acerda de</p> </Link>
                         </li>
                         <li className="nav-item mr-4">
                             <p className="" href="#">Contacto</p>
