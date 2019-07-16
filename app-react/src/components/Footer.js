@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faTwitter, faGooglePlusG, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faHome, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import 'font-awesome/css/font-awesome.min.css';
+import { Link } from "react-router-dom";
 
 class Footer extends Component {
 
@@ -18,11 +19,11 @@ class Footer extends Component {
             </div>
             <div className="col-md-6 col-lg-7 text-center text-md-right">
 
-              <FontAwesomeIcon className="mr-4" icon={faFacebookF} />
-              <FontAwesomeIcon className="mr-4" icon={faTwitter} />
-              <FontAwesomeIcon className="mr-4" icon={faGooglePlusG} />
-              <FontAwesomeIcon className="mr-4" icon={faLinkedinIn} />
-              <FontAwesomeIcon className="mr-4" icon={faInstagram} />
+              <a href="https://www.facebook.com/"><FontAwesomeIcon className="mr-4" icon={faFacebookF} /></a>
+              <a href="https://twitter.com/"><FontAwesomeIcon className="mr-4" icon={faTwitter} /></a>
+              <a href="https://plus.google.com"><FontAwesomeIcon className="mr-4" icon={faGooglePlusG} /></a>
+              <a href="https://www.linkedin.com/"><FontAwesomeIcon className="mr-4" icon={faLinkedinIn} /></a>
+              <a href="https://www.instagram.com/"><FontAwesomeIcon className="mr-4" icon={faInstagram} /></a>
 
             </div>
           </div>
@@ -38,7 +39,7 @@ class Footer extends Component {
               </p>
             </div>
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              
+
             </div>
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
