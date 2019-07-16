@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from 'axios';
 
+
 class BlogList extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             tour: {}
             , price: '15000'
@@ -11,7 +12,7 @@ class BlogList extends Component {
             , services: []
             , description: ''
             , images: []
-            , id: 12
+            , id:  this.props.match.params.id
         }
 
     }
@@ -30,7 +31,7 @@ class BlogList extends Component {
         axios.post(`http://localhost:9000/Tour/getTourById`, {
             id: this.state.id
         })
-       
+
             .then(res => {
                 console.log(res.data[0]);
                 const tour = res.data[0][0];
@@ -46,8 +47,8 @@ class BlogList extends Component {
             .then(res => {
                 console.log(res.data[0])
                 this.setState({
-                     services: res.data[0]
-                 });
+                    services: res.data[0]
+                });
             })
     }
     render() {
@@ -72,22 +73,26 @@ class BlogList extends Component {
                             <h3>{this.state.name}</h3>
                         </div>
                         <div className="row">
-                            <h5>Precio: </h5> {this.state.price}
+                            <h5>Precio: {this.state.price}</h5>
                         </div>
-                        cantidad:
+                        Cantidad:
                         <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                                
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <div className="row">
+                            <br/>
+                            <button onClick={this.addTravel.bind(this)} class="btn btn-primary"> add travel </button>
+                        </div>
                     </div>
-                    <button onClick={this.addTravel.bind(this)} class="btn btn-primary"> add travel </button>
-                    <br/>
+
+                    <br />
                     <div className="col-xs-12 col-sm-12 col-md-12">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <br /> <br /> <br /> <br />
+                        <ul class="nav nav-tabs" id="text" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descripción</a>
                             </li>

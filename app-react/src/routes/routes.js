@@ -26,7 +26,7 @@ class AppRoutes extends Component {
                     <Route exact path="/blogList" component={blogList} />
                     <Route exact path="/blogPost" component={blogPost} />
                     <Route exact path="/AboutUS" component={AboutUS} />
-                    <Route exact path="/infoTour" component={InfoTour} />
+                    <Route exact path="/infoTour/:id?" component={InfoTour} />
                     <Route exact path="/contact" component={contact} />
                 </Switch>
             </App>

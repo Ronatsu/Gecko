@@ -6,6 +6,8 @@ import '../pages/Tours.css';
 import $ from 'jquery';
 import axios from 'axios';
 import { Accordion, Card, Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 
 
 class Tour extends Component {
@@ -42,7 +44,7 @@ class Tour extends Component {
     checkStatus() {
         $("input").on("change", function () {
             if ($(this).is(':checked')) {
-                
+
                 var filter = $(this).val().toLowerCase();
                 if (filter != 'on'.toLowerCase()) {
                     $(".jj").filter(function () {
@@ -57,9 +59,13 @@ class Tour extends Component {
 
     render() {
         let tourCards = this.state.tour.map((tour) => {
+            console.log(tour)
             return (
+
                 <Col sm="4">
-                    <TourCard tour={tour} />
+                    <Link to={'/infoTour/'+tour.TOUR_id}>
+                        <TourCard tour={tour} />
+                    </Link>
                 </Col>
             );
         })
