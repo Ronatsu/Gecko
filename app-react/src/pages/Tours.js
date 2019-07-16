@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import TourCard from '../components/TourCard';
-import { ExpandLess, ExpandMore } from '@material-ui/icons';
-import { CustomInput, FormGroup, Label, Col, Row } from 'reactstrap';
+import { CustomInput, FormGroup, Col, Row } from 'reactstrap';
 import '../pages/Tours.css';
 import $ from 'jquery';
 import axios from 'axios';
-import { Accordion, Card, Button, Container } from "react-bootstrap";
 
 
 class Tour extends Component {
@@ -42,14 +40,14 @@ class Tour extends Component {
     checkStatus() {
         $("input").on("change", function () {
             if ($(this).is(':checked')) {
-                
+
                 var filter = $(this).val().toLowerCase();
                 if (filter != 'on'.toLowerCase()) {
-                    $(".jj").filter(function () {
+                    $(".cardTour").filter(function () {
                         $(this).toggle($(this).text().toLowerCase().indexOf(filter) > -1)
                     });
                 } else {
-                    $('.jj').show();
+                    $('.cardTour').show();
                 }
             }
         });
@@ -116,30 +114,3 @@ class Tour extends Component {
     }
 }
 export default Tour;
-
-function expandIcon() {
-    /* $('#'+state1).on('hidden.bs.collapse', function () {
-         return <ExpandMore/>;
-       })
-       $('#'+state1).on('shown.bs.collapse', function () {
-         return <ExpandLess/>;
-       })*/
-    /*if(!$('#collapseTwo').hasClass('collapse in')){
-        return <ExpandMore/>
-    }else {
-        return <ExpandLess/>
-    }*/
-}
-/*
- <a data-toggle="collapse" data-target="#collapseTwo4">
-                            <Label>Checkboxes</Label>
-                            <FormGroup>
-                                <div className="collapse" id="collapseTwo4">
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox" >Montaña</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox2">Laguna</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox3">Caminata</CustomInput>
-                                    <CustomInput type="checkbox" id="exampleCustomCheckbox4">Rio</CustomInput>
-                                </div>
-                            </FormGroup>
-                        </a>
-*/

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import '../components/Card.css';
 import axios from 'axios';
 
@@ -36,7 +35,7 @@ class TourCard extends Component {
         })
         return (
             <div>
-                <div className="card text-center jj mt-3 mb-3 cardTour">
+                <div className="card text-center mt-3 mb-3 cardTour">
                     {this.state.images.map((images) => {
                         return (
                             <img className="img-fluid rounded imagen" src={require(`../Imagenes/${images.Image}`)} />
