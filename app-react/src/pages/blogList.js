@@ -1,54 +1,117 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import { Link } from "react-router-dom";
-import '../pages/blogs.css';
 
 
 class BlogList extends Component {
     constructor() {
         super();
         this.state = {
-            postList: []
+            tour: {}
+            , price: '15000'
+            , name: ''
+            , services: []
+            , description: ''
+            , images: []
+            , id: 12
         }
 
     }
 
+    addTravel = () => {
+        console.log('Add travel');
+
+        const newItem = {
+            id: this.nextUniqueId(), name: 'Casa de Ronny', description: 'SR', quantity: 1, price: 3600
+        };
+
+        this.setState({ travels: this.state.travels.concat(newItem) })
+
+    }
+
     componentDidMount() {
-        axios.get(`http://localhost:9000/BlogList/postList`)
+        axios.post(`http://localhost:9000/Tour/getTourById`, {
+            id: this.state.id
+        })
+
             .then(res => {
-                const blogs = res.data;
-                this.setState({ postList: blogs[0] });
+                console.log(res.data[0]);
+                const tour = res.data[0];
+                this.setState({
+                    name: tour.nameTour
+                    , description: tour.DescriptionTour
+                });
+            })
+
+        axios.post(`http://localhost:9000/Tour/getServicesById`, {
+            id: this.state.id
+        })
+            .then(res => {
+                console.log(res.data[0])
+                this.setState({
+                    services: res.data[0]
+                });
             })
     }
     render() {
-        let blogs = this.state.postList.map((postBlog) => {
-            var imag = postBlog.image;
-            var url = require(`../Imagenes/blogs/${imag}`);
+        let services = this.state.services.map((service) => {
             return (
 
-                <div className="col-sm-4">
-                    <Link to="/blogPost">
-                        <div className="card mb-3">
-
-
-                            <img class="img-fluid rounded" src={url} />
-                            <div className="card-body" id="cardBody">
-                                <h5>{postBlog.title}</h5>
-                                <p className="card-text">{postBlog.description}</p>
-                            </div>
-                            <div className="card-footer text-muted">Publicado: {postBlog.date}</div>
-                        </div>
-                    </Link>
+                <div>
+                    <li>{service.service}</li>
                 </div >
-
             );
         })
+
         return (
             <div className="container" >
                 <br />
                 <div className="row">
+                    <div className="col-xs-12 col-sm-12 col-md-4">
+                        <img class="img-fluid rounded" src={require("../Imagenes/blogs/Imagen1.jpg")} />
+                    </div>
+                    <div className="col-lg-8">
+                        <div className="row">
+                            <h3>{this.state.name}</h3>
+                        </div>
+                        <div className="row">
+                            <h5>Precio: {this.state.price}</h5>
+                        </div>
+                        Cantidad:
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <div className="row">
+                            <br/>
+                            <button onClick={this.addTravel.bind(this)} class="btn btn-primary"> add travel </button>
+                        </div>
+                    </div>
 
-                    {blogs}
+                    <br />
+                    <div className="col-xs-12 col-sm-12 col-md-12">
+                        <br /> <br /> <br /> <br />
+                        <ul class="nav nav-tabs" id="text" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descripción</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Servicios</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <br />
+                    <div className="col-xs-12 col-sm-12 col-md-12">
+                        <br />
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> {this.state.description} </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"> {services} </div>
+
+                        </div>
+                    </div>
                 </div>
 
             </div>
