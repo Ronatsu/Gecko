@@ -1,16 +1,61 @@
 import React, { Component } from "react";
-import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { ShoppingCart } from '@material-ui/icons';
 import './FooterCss.css';
-import { Icon } from "@material-ui/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faTwitter, faGooglePlusG, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faHome, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import 'font-awesome/css/font-awesome.min.css';
 
 class Footer extends Component {
 
   render() {
     return (
-      <div>
-        
-      </div>
+      <footer className="page-footer font-small ">
+
+        <div className="container-fluid greenColor">
+          <div className="row py-4 ">
+            <div className="col-md-6 col-lg-5" /*text-center text-md-left mb-4 mb-md-0"*/>
+              <h6 className="mb-0">GECKO AVENTURAS ¡Atrevete a la aventura!</h6>
+            </div>
+            <div className="col-md-6 col-lg-7 text-center text-md-right">
+
+              <FontAwesomeIcon className="mr-4" icon={faFacebookF} />
+              <FontAwesomeIcon className="mr-4" icon={faTwitter} />
+              <FontAwesomeIcon className="mr-4" icon={faGooglePlusG} />
+              <FontAwesomeIcon className="mr-4" icon={faLinkedinIn} />
+              <FontAwesomeIcon className="mr-4" icon={faInstagram} />
+
+            </div>
+          </div>
+        </div>
+        <div class="container text-center text-md-left mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase font-weight-bold">Gecko Aventuras</h6>
+              <hr className="greenColor accent-2 mb-4 mt-0 d-inline-block mx-auto" width="140px" />
+              <p>
+                La empresa esta dedicada a la promocion y distribucion de tours a lo largo de la zona de occidente, contactenos y disfruta con nosotras las multiples bellezas de la zona.
+
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+              <hr class="greenColor accent-2 mb-4 mt-0 d-inline-block mx-auto" width="80px" />
+              <p><FontAwesomeIcon className="mr-3" icon={faHome} />Grecia, Alajuela, CR</p>
+              <p><FontAwesomeIcon className="mr-3" icon={faEnvelope} />info@geko.com</p>
+              <p><FontAwesomeIcon className="mr-3" icon={faPhone} />+ 506 234 567 88</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-3">César Jiménez - Ronald Alfaro - Kenneth Ugalde - Ronny Alvarez
+        </div>
+      </footer>
     );
   }
 }

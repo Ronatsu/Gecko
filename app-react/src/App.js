@@ -4,7 +4,7 @@ import './App.css';
 //import './GeneralCSS/NavCss.css';
 import Nav from './components/Header';
 import Carrusel from './components/Carrusel';
-//import Footer from './components/Footer';
+import Footer from './components/Footer';
 
 class App extends Component {
   static propTypes = {
@@ -20,8 +20,9 @@ class App extends Component {
         <body id="body">
           {children}
         </body>
+        <br/><br/>
         <footer id="footer">
-         
+         <Footer/>
         </footer>
       </div>
     );
