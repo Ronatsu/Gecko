@@ -115,7 +115,6 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto colorText mt-2">
                         <li className="nav-item mr-4">
-                            <button onClick={this.addTravel.bind(this)}> add travel </button>
                             <Link to="/"><p className="" href="#">Inicio</p></Link>
                         </li>
                         <li className="nav-item mr-4">
@@ -135,7 +134,9 @@ class Header extends Component {
                         </li>
                     </ul>
                     <ul className="navbar-nav ml-3 mr-3 colorCart">
+                    <button onClick={this.addTravel.bind(this)}> add travel </button>
                         <li className="" onClick={this.onOpenModal}>
+                        
                             <ShoppingCart id="icon" />
                         </li>
                     </ul>
