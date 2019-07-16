@@ -1,0 +1,29 @@
+.CssAbout {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.DivAbout {
+    background: white;
+}
+
+.divInformation {
+    background:white;
+    border-radius: 15px;
+}
+
+h4 {
+    
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.infoEnterprise {
+    background: white;
+}
+
+.admins {
+    background: white;
+    font-size: 2px;
+}
