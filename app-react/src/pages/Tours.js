@@ -4,12 +4,9 @@ import { CustomInput, FormGroup, Col, Row } from 'reactstrap';
 import '../pages/Tours.css';
 import $ from 'jquery';
 import axios from 'axios';
-<<<<<<< HEAD
 import { Accordion, Card, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-=======
->>>>>>> 8bada6569e0574d5cfa269d3b427082c6a4ad725
 
 
 class Tour extends Component {
