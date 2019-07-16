@@ -10,10 +10,11 @@ class Footer extends Component {
   render() {
     return (
       <footer className="page-footer font-small ">
+        
         <div className="container-fluid greenColor">
           <div className="row py-4 ">
             <div className="col-md-6 col-lg-5" /*text-center text-md-left mb-4 mb-md-0"*/>
-              <h6 className="mb-0">Get connected with us on social networks!</h6>
+              <h6 className="mb-0">GECKO AVENTURAS ¡Atrevete a la aventura!</h6>
             </div>
             <div className="col-md-6 col-lg-7 text-center text-md-right">
 

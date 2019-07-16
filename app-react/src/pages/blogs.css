@@ -1,3 +1,7 @@
 #cardBody{
     color: #353531;
 }
+
+#cardBody :hover{  
+    color: #353531;
+}

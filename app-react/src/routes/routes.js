@@ -4,7 +4,7 @@ import Home from '../pages/Home';
 import App from '../App';
 import db from '../components/AddMedicalForm';
 import Tour from '../pages/Tours';
-import blogList from '../pages/BlogList';
+import blogList from '../pages/blogList';
 import blogPost from '../pages/blogPost';
 import AboutUS from '../AboutUs/AboutUs';
 
