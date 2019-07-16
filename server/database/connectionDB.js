@@ -8,6 +8,9 @@ const connection = mysql.createConnection({
     password: 'geckoTortuguero19',
     database: 'geckoaventuras'
   })
+
+
+
 // db pc kenny :v
 
   connection.connect(function(err){

@@ -45,13 +45,6 @@ class AboutUs extends Component {
             </Card>
         );
 
-        let dataEnterprise =
-            <div className="infoEnterprise" fluid>
-                <ShoppingCart /><h4>+506 8888-8888</h4>
-                <ShoppingCart /> <h4>Gecko Aventuras S.A</h4>
-                <ShoppingCart /> <h4>Alajuela, Costa Rica</h4>
-            </div>
-            
         return (
             <div className="DivAbout">
                 <Container className="CssAbout">
@@ -68,7 +61,6 @@ class AboutUs extends Component {
                                             src={require("../Imagenes/logos/gecko2.png")}
                                         />
                                     </Figure>
-                                    {dataEnterprise}
                                 </Col>
 
                                 <Col className="CssAbout">

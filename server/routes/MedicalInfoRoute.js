@@ -68,7 +68,7 @@ router.get('/getLastTour', function (req, res) {
 
   router.get('/getInfoPage', function (req, res) {
     console.log('es un get');
-    connection.query("CALL getTextByPage()", function (err, result) {
+    connection.query("CALL getTextByAboutUS()", function (err, result) {
       if (err) {
         return res.send(err)
       }
