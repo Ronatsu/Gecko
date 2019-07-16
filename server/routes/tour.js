@@ -24,9 +24,11 @@ router.post('/getServicesById', function (req, res) {
  
     connection.query("CALL Proc_GetServices(" + req.body.id + ")", function (err,result) {
         if (err) {
+            console.log(err)
           return res.send(err)
         }
         else {
+        console.log(result)
           return res.send(result)
         }
       }

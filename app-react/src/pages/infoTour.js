@@ -11,7 +11,7 @@ class BlogList extends Component {
             , services: []
             , description: ''
             , images: []
-            , id: 13
+            , id: 12
         }
 
     }
@@ -30,7 +30,9 @@ class BlogList extends Component {
         axios.post(`http://localhost:9000/Tour/getTourById`, {
             id: this.state.id
         })
+       
             .then(res => {
+                console.log(res.data[0]);
                 const tour = res.data[0][0];
                 this.setState({
                     name: tour.nameTour
