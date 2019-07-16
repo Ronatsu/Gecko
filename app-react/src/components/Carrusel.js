@@ -25,11 +25,11 @@ class Header extends Component {
 
     render() {
 
-        let lastTours = this.state.listLastTours.map((tours) =>
+        let lastTours = this.state.listLastTours.map((tours) => 
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={require("../Imagenes/volPoas.jpg")}
+                    src={require(`../Imagenes/tours/${tours.image}`)}
                     alt="First slide"
                     height="400"
                 />

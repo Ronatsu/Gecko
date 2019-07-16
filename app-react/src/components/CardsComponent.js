@@ -28,7 +28,7 @@ class CardsComponent extends Component {
 
         let topTours = this.state.listTopTours.map((tours) =>
             <Card>
-                <Card.Img variant="top" src={require("../Imagenes/1200px-Poas_crater.jpg")} />
+                <Card.Img variant="top" src={require(`../Imagenes/tours/${tours.image}`)} />
                 <Card.Body>
                     <Card.Title>{tours.nameTour}</Card.Title>
                     <Card.Text>
