@@ -10,6 +10,7 @@ var app = express();
 // declaration of the routes
 var MedicalInfoRoute = require('./routes/MedicalInfoRoute');
 var BlogList = require('./routes/blogPost');
+var Tour = require('./routes/tour');
 
 
 
@@ -29,6 +30,7 @@ app.use('/', indexRouter);
 //routes
 app.use('/MedicalInfo', MedicalInfoRoute);
 app.use('/BlogList', BlogList);
+app.use('/tour', Tour);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -20,6 +20,7 @@ class App extends Component {
         <body id="body">
           {children}
         </body>
+        <br/><br/>
         <footer id="footer">
          <Footer/>
         </footer>
