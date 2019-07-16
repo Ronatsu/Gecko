@@ -12,8 +12,8 @@ import UniqueId from 'react-html-id';
 
 class Header extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         UniqueId.enableUniqueIds(this);
         this.state = {
             travels: [
@@ -21,6 +21,9 @@ class Header extends Component {
                 { id: this.nextUniqueId(), name: 'Laguna poas', description: 'Poas Rio', quantity: 3, price: 7500 },
                 { id: this.nextUniqueId(), name: 'Iglesia de SR', description: 'SanRoque Catolico', quantity: 1, price: 1250 },
             ],
+            newItem: {
+                id: this.nextUniqueId(), name: 'Casa de Ronny 222', description: 'SR', quantity: 1, price: 3600
+            },
             open: false,
         }
         console.log(this.state);
@@ -92,13 +95,7 @@ class Header extends Component {
 
     addTravel = () => {
         console.log('Add travel');
-
-        const newItem = {
-            id: this.nextUniqueId(), name: 'Casa de Ronny', description: 'SR', quantity: 1, price: 3600
-        };
-
-        this.setState({ travels: this.state.travels.concat(newItem) })
-
+        this.setState({ travels: this.state.travels.concat(this.state.newItem) })
     }
 
     render() {
@@ -111,7 +108,7 @@ class Header extends Component {
         }
         return (
             <nav className="navbar navbar-expand-lg navbar-light navColor">
-                <a className="navbar-brand ml-4" href="#"> <img src={require("../Imagenes/logos/gecko3.png")} width="170" height="50" /></a>
+                <a className="navbar-brand ml-4" href="http://localhost:3000/"> <img src={require("../Imagenes/logos/gecko3.png")} width="170" height="50" /></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 
 class BlogList extends Component {
@@ -14,17 +15,6 @@ class BlogList extends Component {
             , images: []
             , id:  this.props.match.params.id
         }
-
-    }
-    addTravel = () => {
-        console.log('Add travel');
-
-        const newItem = {
-            id: this.nextUniqueId(), name: 'Casa de Ronny', description: 'SR', quantity: 1, price: 3600
-        };
-
-        this.setState({ travels: this.state.travels.concat(newItem) })
-
     }
 
     componentDidMount() {
@@ -51,6 +41,8 @@ class BlogList extends Component {
                 });
             })
     }
+
+
     render() {
         let services = this.state.services.map((service) => {
             return (
@@ -60,6 +52,7 @@ class BlogList extends Component {
                 </div >
             );
         })
+
 
         return (
             <div className="container" >
@@ -85,7 +78,7 @@ class BlogList extends Component {
                         </select>
                         <div className="row">
                             <br/>
-                            <button onClick={this.addTravel.bind(this)} class="btn btn-primary"> add travel </button>
+                            <button onClick={console.log('hi')}> add travel </button>
                         </div>
                     </div>
 
