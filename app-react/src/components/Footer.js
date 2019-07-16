@@ -11,7 +11,6 @@ class Footer extends Component {
   render() {
     return (
       <footer className="page-footer font-small ">
-
         <div className="container-fluid greenColor">
           <div className="row py-4 ">
             <div className="col-md-6 col-lg-5" /*text-center text-md-left mb-4 mb-md-0"*/>
@@ -28,26 +27,26 @@ class Footer extends Component {
             </div>
           </div>
         </div>
-        <div class="container text-center text-md-left mt-5">
-          <div class="row mt-3">
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-              <h6 class="text-uppercase font-weight-bold">Gecko Aventuras</h6>
+        <div className="container text-center text-md-left mt-5">
+          <div className="row mt-3">
+            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 className="text-uppercase font-weight-bold">Gecko Aventuras</h6>
               <hr className="greenColor accent-2 mb-4 mt-0 d-inline-block mx-auto" width="140px" />
               <p>
                 La empresa esta dedicada a la promocion y distribucion de tours a lo largo de la zona de occidente, contactenos y disfruta con nosotras las multiples bellezas de la zona.
 
               </p>
             </div>
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
             </div>
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
             </div>
 
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <h6 class="text-uppercase font-weight-bold">Contacto</h6>
-              <hr class="greenColor accent-2 mb-4 mt-0 d-inline-block mx-auto" width="80px" />
+            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 className="text-uppercase font-weight-bold">Contacto</h6>
+              <hr className="greenColor accent-2 mb-4 mt-0 d-inline-block mx-auto" width="80px" />
               <p><FontAwesomeIcon className="mr-3" icon={faHome} />Grecia, Alajuela, CR</p>
               <p><FontAwesomeIcon className="mr-3" icon={faEnvelope} />info@geko.com</p>
               <p><FontAwesomeIcon className="mr-3" icon={faPhone} />+ 506 234 567 88</p>
