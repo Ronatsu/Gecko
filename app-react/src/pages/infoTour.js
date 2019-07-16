@@ -6,28 +6,58 @@ class BlogList extends Component {
         super();
         this.state = {
             tour: {}
-            , price: ''
+            , price: '15000'
             , name: ''
             , services: []
             , description: ''
             , images: []
-            ,id:13
+            , id: 13
         }
+
+    }
+    addTravel = () => {
+        console.log('Add travel');
+
+        const newItem = {
+            id: this.nextUniqueId(), name: 'Casa de Ronny', description: 'SR', quantity: 1, price: 3600
+        };
+
+        this.setState({ travels: this.state.travels.concat(newItem) })
 
     }
 
     componentDidMount() {
-        axios.post(`http://localhost:9000/Tour/getTourById`,{
+        axios.post(`http://localhost:9000/Tour/getTourById`, {
             id: this.state.id
         })
             .then(res => {
-                alert(res.data);
                 const tour = res.data[0][0];
-                console.log(res.data);
-                this.setState({ name : tour });
+                this.setState({
+                    name: tour.nameTour
+                    , description: tour.DescriptionTour
+                });
+            })
+
+        axios.post(`http://localhost:9000/Tour/getServicesById`, {
+            id: this.state.id
+        })
+            .then(res => {
+                console.log(res.data[0])
+                this.setState({
+                     services: res.data[0]
+                 });
             })
     }
     render() {
+        let services = this.state.services.map((service) => {
+            return (
+
+                <div>
+                    <li>{service.service}</li>
+                </div >
+            );
+        })
+
         return (
             <div className="container" >
                 <br />
@@ -40,26 +70,20 @@ class BlogList extends Component {
                             <h3>{this.state.name}</h3>
                         </div>
                         <div className="row">
-                            <h5>Precio: </h5>
+                            <h5>Precio: </h5> {this.state.price}
                         </div>
                         cantidad:
-
-                        <div className="row">
-
-
-                            <div class="dropdown">
-                                <button class="btn btn-md dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="1">
-                                    1</button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item " value="1">1</a>
-                                    <a class="dropdown-item" value="2">2</a>
-                                    <a class="dropdown-item" value="3">3</a>
-                                    <a class="dropdown-item" value="4">4</a>
-                                    <a class="dropdown-item" value="5">5</a>
-                                </div>
-                            </div>
-                        </div>
+                        <select>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                
                     </div>
+                    <button onClick={this.addTravel.bind(this)} class="btn btn-primary"> add travel </button>
+                    <br/>
                     <div className="col-xs-12 col-sm-12 col-md-12">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
@@ -71,11 +95,12 @@ class BlogList extends Component {
 
                         </ul>
                     </div>
+                    <br />
                     <div className="col-xs-12 col-sm-12 col-md-12">
                         <br />
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> descripcion </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"> servicios </div>
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> {this.state.description} </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"> {services} </div>
 
                         </div>
                     </div>

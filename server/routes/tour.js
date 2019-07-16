@@ -7,8 +7,8 @@ router.use(cors());
 
 //para diferenciar metodos post en las comillas de debe de poner el nombre
 router.post('/getTourById', function (req, res) {
-    console.log(req.body.id);
-  connection.query("CALL spGetBlogPostById(" + req.body.id + ")", function (err,result) {
+ 
+  connection.query("CALL getTourById(" + req.body.id + ")", function (err,result) {
       if (err) {
         return res.send(err)
       }
@@ -19,5 +19,18 @@ router.post('/getTourById', function (req, res) {
     )
 });
 
+
+router.post('/getServicesById', function (req, res) {
+ 
+    connection.query("CALL Proc_GetServices(" + req.body.id + ")", function (err,result) {
+        if (err) {
+          return res.send(err)
+        }
+        else {
+          return res.send(result)
+        }
+      }
+      )
+  });
 
 module.exports = router;

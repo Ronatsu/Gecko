@@ -2,10 +2,10 @@ const mysql = require("mysql");
 
 // db pc kenny :v
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'gecko-aventuras.mysql.database.azure.com',
     port: 3306,
-    user: 'root',
-    password: 'root',
+    user: 'adgecko19@gecko-aventuras',
+    password: 'geckoTortuguero19',
     database: 'geckoaventuras'
   })
 // db pc kenny :v
