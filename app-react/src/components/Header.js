@@ -91,6 +91,17 @@ class Header extends Component {
         const travels = Object.assign([], this.state.travels);
         travels.splice(index, 1);
         this.setState({ travels: travels })
+    };
+
+    addTravel = () => {
+        console.log('Add travel');
+
+        const newItem = {
+            id: this.nextUniqueId(), name: 'Casa de Ronny', description: 'SR', quantity: 1, price: 3600 
+        };
+
+        this.setState({ travels: this.state.travels.concat(newItem) })
+
     }
 
     render() {
@@ -111,6 +122,7 @@ class Header extends Component {
                     <ul className="navbar-nav ml-auto colorText mt-2">
                         <li className="nav-item mr-4">
                             <TravelInput />
+                            <button onClick={this.addTravel.bind(this)}> add travel </button>
                             <Link to="/"><p className="" href="#">Inicio</p></Link>
                         </li>
                         <li className="nav-item mr-4">

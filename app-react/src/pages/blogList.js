@@ -32,7 +32,7 @@ class BlogList extends Component {
 
 
                             <img class="img-fluid rounded" src={url} />
-                            <div className="card-body">
+                            <div className="card-body" id="cardBody">
                                 <h5>{postBlog.title}</h5>
                                 <p className="card-text">{postBlog.description}</p>
                             </div>
