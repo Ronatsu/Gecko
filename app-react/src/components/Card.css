@@ -10,9 +10,7 @@
     border-radius: 20px;
 }
 .cardTour:hover .imagen {
-    -webkit-transform:scale(1.3);
-    transform:scale(1.3);
-    filter: blur(3px);
+    filter: saturate(280%);
 }
 .cardTour {overflow:hidden;}
 
